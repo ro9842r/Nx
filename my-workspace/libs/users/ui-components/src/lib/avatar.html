@@ -1,0 +1,8 @@
+<div>
+  @if (user()) {
+    <strong>{{ user()!.name }}</strong>
+    <span> ({{ user()!.email }})</span>
+  } @else {
+    <span>Guest</span>
+  }
+</div>

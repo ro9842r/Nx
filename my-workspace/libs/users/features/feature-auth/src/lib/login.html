@@ -1,0 +1,14 @@
+<section>
+  <h2>Login</h2>
+  <form (ngSubmit)="submit()">
+    <input name="email" [(ngModel)]="email" placeholder="Email" />
+    <input
+      name="password"
+      [(ngModel)]="password"
+      type="password"
+      placeholder="Password"
+    />
+    <button type="submit">Sign in</button>
+  </form>
+  <p>{{ message }}</p>
+</section>

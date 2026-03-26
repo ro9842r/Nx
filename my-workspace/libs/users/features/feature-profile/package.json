@@ -1,0 +1,10 @@
+{
+  "name": "@my-workspace/users/features/feature-profile",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/core": "^21.2.0",
+    "@my-workspace/users/ui-components": "0.0.1",
+    "@my-workspace/users/data-access": "0.0.1"
+  },
+  "sideEffects": false
+}

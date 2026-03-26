@@ -1,0 +1,211 @@
+crie um relatorio completo da POC : Rodrigo [0:18]: você tem que mexer nas pontes bando tudo aqui tá mas aí você vai fazer pouco a pouco vai passando o contexto
+Rodrigo [0:20]: e deixa do jeito que tá lá
+Rodrigo [0:23]: e aí o resto é coisa
+Rodrigo [0:27]: papai não pode ganhar agora
+Rodrigo [0:41]: não fica falando que agora eu vou falar
+Rodrigo [0:45]: todo aqui
+Rodrigo [1:19]: o que eu peço o que eu tô perguntando se é seitado
+Rodrigo [1:47]: sem valor sem tirar ela minha reunião começou aqui
+Rodrigo [1:50]: não vai ficar batendo
+Them [1:53]: olá
+Rodrigo [3:29]: prova start
+Them [3:38]: weekend
+Them [3:40]: gustavo
+Rodrigo [3:46]: oh he's here
+Them [3:48]: let's come
+Them [3:52]: hola equipo ¿cómo estás
+Them [3:55]: ¿qué tal buen día aretun
+Rodrigo [3:58]: great
+Rodrigo [4:01]: doing
+Them [4:01]: great let's go
+Them [4:10]: ok este espacio es para ustedes víctor perdón víctor rodrigo osvaldo
+Them [4:29]: para podemos revisar esta poc que se tiene y bueno a ver ver cómo le podemos dar forma aquí se pueda presentar con luis y qué nos pueda dar su feedback así que el momento sería solo parte de rodrigo porque no tuvimos tiempo de verlo estuvimos setiendo el proyecto con derek así que ya está corriendo el frontend
+Them [4:31]: ok
+Them [4:33]: pero ajá rodrigo puede tomar
+Rodrigo [4:36]: ok rodrigo
+Rodrigo [4:40]: a javascript
+Rodrigo [6:08]: first of all
+Rodrigo [6:15]: están llevando projects one
+Rodrigo [6:16]: second
+Rodrigo [7:31]: you can see my screen
+Them [7:35]: no
+Rodrigo [8:03]: so now
+Rodrigo [8:07]: si
+Them [8:07]: vemos tu cursor
+Them [8:09]: ya
+Rodrigo [8:19]: that's the pop here try to call the first concept explaining about that
+Rodrigo [8:30]: and so dispersed off the concept we're being regular
+Rodrigo [8:41]: i walk on all of this expertory for us and here we have
+Rodrigo [9:03]: first of all on start to talk about the next and how can i choose to enact for the game and so this extruder of rnas workspace as you can see we have domain application here and blocky app
+Rodrigo [9:11]: which acts as the shell it's defined global routes providers and rootstraps the entire app
+Rodrigo [9:15]: then we have the live folder
+Rodrigo [9:28]: and sorry rehab the lights folder which contains all the modular libraries each library has a clear responsibility for example features
+Rodrigo [9:34]: for the main page like dashboard and items
+Rodrigo [9:39]: and data access for state management and earth casisteration
+Rodrigo [9:42]: and integration
+Rodrigo [9:46]: for api communication and share it
+Rodrigo [9:51]: for usb ui components models
+Rodrigo [9:52]: and utilities
+Rodrigo [10:02]: and this model switcher helps scale easily clip the code clean and test each part independently
+Rodrigo [10:08]: and let's beginning for
+Rodrigo [10:12]: eating apis probably
+Rodrigo [10:24]: yeah inside aits we have the full crude rule
+Rodrigo [10:27]: and we have
+Rodrigo [10:35]: list details for lista items list item form
+Rodrigo [10:39]: item detail fick tree items
+Rodrigo [10:55]: and the separation allows to involve each layer in the family and for example we can replace the api or your channel state logic without touching day why it's also making test and maintaining so much easier
+Rodrigo [11:00]: and it's a good organization
+Rodrigo [11:05]: too and here you can see uh fixed your items folder
+Rodrigo [11:12]: it's contain all the components that make you cured experience
+Rodrigo [11:17]: but first of all let me try show reels
+Rodrigo [11:19]: like
+Rodrigo [11:20]: i talked on vacation and running
+Rodrigo [11:38]: let me that is cool
+Rodrigo [11:40]: size
+Rodrigo [11:49]: and that's the items
+Rodrigo [11:53]: and
+Rodrigo [12:03]: so so here's so here the app is run to accounting and this is items page
+Rodrigo [12:13]: richard started off the fig tree things uh modeling is the simple crew to zanper booting with standalone components and signal based states
+Rodrigo [12:34]: at the top we have search and field that few days it's in by name or status um you can see the list of items with their details in our status code and the last day data uh rich role has actions for a date and delete
+Rodrigo [12:36]: and
+Rodrigo [12:38]: uh
+Rodrigo [13:00]: both connected to the data access layer when i click an edit in subterform components with loads the selected thing uh data user signals just make the uri reactive and keep the state synchronized without raised up early fleet
+Rodrigo [13:06]: and this is power off an x because everything is connected
+Rodrigo [13:10]: and
+Rodrigo [13:22]: when this is my table py things and ritcard is when they're using reusable component where we're able component from our share ui library
+Rodrigo [13:25]: and that's who i like right here
+Rodrigo [13:36]: and the data you see comes from the data ssin store and which news angular signal to keep everything reactive
+Rodrigo [13:47]: when i create up a date or delete a meeting the list to update instantly without manual refresher extra subscriptions
+Rodrigo [13:51]: and then keeps the ui very fast
+Rodrigo [14:02]: and brady cable and it's also simply assessing you can mock the signals and validate state transition in the penalty
+Rodrigo [14:09]: and here we have the create icon
+Rodrigo [14:19]: and the create ai thing isn't good as ample for discombonies is also standalone
+Rodrigo [14:23]: and uses zangler reactive forms for getting rid of signals
+Rodrigo [14:37]: when i feel interfields for example name owner state and square and click and create as triggers the creative method from the data as the installer
+Rodrigo [14:45]: uh the new acton is added into the state and the listing of a date instantity and thanks to the reactive signal connection
+Rodrigo [14:53]: this flows um demonstrate how the feature data s is an integration layer work together
+Rodrigo [14:57]: and through this call plate but perfect synchronation
+Rodrigo [15:03]: and let me see why can i say about that
+Rodrigo [15:05]: do you have any question
+Them [15:11]: and yeah
+Them [15:32]: what i want to see right now is how for example you approach the idea of uh modular monolith a structure i want to see that in terms of the structure of your project
+Rodrigo [15:54]: and you question the idea of the model or monolith is exactly what guided extra and then that's each library inside lives here
+Rodrigo [16:04]: represents a domain boundary for example it resitems
+Rodrigo [16:11]: and identitaria writing form and together form the items domain
+Rodrigo [16:43]: they are independent but living in the same on the repo so we keep all the benefits of model data without a complex front end net domain has its own ui states and integration layers and communicates with others own through the public apis defined index and the next thing sports is this bound plate automatically and prevent cross imports between relatate domains
+Rodrigo [17:01]: and feminine my pnf dropped as a process that give us a clear separation of concerns um skateboard tatary and fast rock abutes with single deployment limits which is the essential of modular on it
+Them [18:15]: so for example one thing that i would like to see because i understand the modular stuff you did at that point but for example when i talk about modules i talk about not the let's say not the concept of angular model yeah the native i'm glad module when i'm talking about module i'm talking about the the business meaning that it has in a let's say system of platform and at good example let's say for for us that we can like be familiar with is the e - commerce stuff for example we can have a e - commerce solution but in the e - commerce industry they have a different areas let's say in those terms to attempt in a specific
+Them [18:30]: like work into the whole industry for example in e - commerce we have a module core catalog that is responsible for maintaining the products and publishing them
+Them [19:50]: alongside we have a module called shipping that is responsible for a creating send orders and it is connecting with the let's say with stuff like that with delivery a platforms and then we have orders and stuff like that but
+Them [19:50]: but
+Rodrigo [19:50]: it's in the lecture integration with stern api and we feel rare to expand the system we could easily add new business models for example users or reports uh which its own futures data access and integration layers and that's in sports as the boundaries between them so business models remains independent but still part of the same deployment platform
+Rodrigo [20:01]: this way to add tap to scales by business compatibility is not by a technical layer it's like volume described for you enterprise platform
+Rodrigo [20:11]: but i understand you yeah because the root of your project i see directly features
+Rodrigo [21:05]: and what i i don't remember if i show you while we're back in solution but feature is a concept that we have below the main concept that we call the module and i want to see something like that in your presentation it's something like represents because i understand your point we can like this is item represents anisolated concept that is not let's say it's not being mixed with other features with other like modules related to feature but for me it is something like for example in our case we have let's say country study and we have features with inside country study we have country strategy then we're going to have country
+Rodrigo [21:14]: engagement node then we're going to have another concept all below the module that is called country strategy
+Rodrigo [21:28]: and in counter strategy our first module in the future we're going to have alongside country strategy another module that is going to have many features and for each feature we're going to have manage use cases
+Rodrigo [21:34]: so that is something that i want to and that's maybe the purpose of the
+Rodrigo [22:22]: of
+Them [22:22]: the poc if we can do something similar at this level to i want to see like how possible is to maintain that into into the structure we're going to like to get how possible is to maintain that and how possible is to enforce rules through nx graph dependency because yeah because for this case for the example that you show us it is for me it is something like it is directly to one module what happened for example if you want to build another module to live in the top let's say for example in this case what would be your module
+Them [22:25]: your business module what would be
+Rodrigo [22:54]: um that's a regression and yes an x allows to scale that extruder easier wise inverse in the same depends rules with a need to add it in top business model for example and model we could tell you created further like like that and for example let me see let's see trees models
+Rodrigo [23:14]: psychopathology we have the nutrients
+Rodrigo [23:18]: and integration
+Them [23:20]: yeah
+Them [24:38]: yeah and that at that point you shouldn't have anything related to for example you have like integration you have right now at the top of their libraries folder you already have that for example features integration that it should not contain that it should only contain modules and then inside module do you have your modules in themselves like catalog and under catalog you're going to have like your features and other features maybe you're going to have your juice cases for example create a new item and that folder that says create item should contain for example your view your view component and then you're i don't know what are the all the all the idea to do something related to vertical slice architecture or stuff like that to have it similar a structure that's what i want that's the direction was aiming for what you described and fits perfectly with vertical slice or that revenge each business model is contained everything needs need end - to - end for example um under the model is cataloging
+Them [24:44]: we could have use cases lease sightings ditch items
+Them [24:53]: and it used like each use case like create item we include its own view
+Them [25:05]: states and integration logic and through the self - contained just make it easier freezer about tasks and move independently
+Them [25:28]: and that supports a spot during very well because we can still enforce balance room tags and defense rules with keeping everything grow if you think group by business capacity and so yes the next duration of this boc king river exactly toward that vertical slice model
+Them [25:39]: and where each business model is contains multiple user cases each one wounding its ui state data flow
+Them [25:41]: and that's it
+Rodrigo [26:07]: that's duration i want to take this pfc what are your discraving have its business models with its own use cases like new cits great items editing it's a sense of verticalizer tattoo
+Rodrigo [26:39]: its lice contains everything it's needed the view component that state launch can seek overstore and the integration of the apis that make it completely self - contained it is into a reason about the person and the next injuryation the plane to refact of dextrum so the top level lives folder on the contain models and each ship models like catalular items we have its own internal structure for use cases
+Rodrigo [26:48]: and next we will still enforce the bands graph and so uh each app is lies remains isolated
+Rodrigo [26:53]: but consisting with the overall business of tattoo
+Them [26:58]: okay
+Them [27:03]: how do you feel in doing something like
+Them [27:06]: let's say in an example
+Them [27:23]: of like an e - commerce solution and doing a structure like that and to have the idea of running architecture or architectural tests do you feel like comfortable doing something like that
+Rodrigo [27:38]: yes yes yes i mean that's okay for me that's okay for me and so the very comfortable and doing that work on several enterprise process where you apply the same modular in verticalized et cetera
+Rodrigo [27:57]: and include your cornsystize solutions and with and that's it's uh it's your organized workspace by business models and for example catalab or the spavements and shipping the round of attachment tests are going to date the bands in red
+Rodrigo [28:32]: and we can use next building depends you contain so our two the last line rules to ensure that for example orders navering forward directly phone payments i've also used tools like deep graph and the fact that comments to visualize and enforce those board narrating ci so yes very comfortable design women and testing decying all through layer it and using dragon tattery and re - records context
+Rodrigo [28:36]: okay
+Rodrigo [28:38]: okay i think we can do that
+Rodrigo [28:42]: all right
+Them [28:51]: i also i also share like uh markdown tree of something that i had in mind
+Them [28:54]: also for the poc
+Them [29:04]: ignore the part that says shell is just like the application but for us will be uh just our application and that's it
+Them [29:42]: uh but uh in here i just have a few like things that um that i don't know if it makes sense or uh so the idea is like we have the libraries right each library will be a domain or a model as gustavo mentioned then we will have a ui components youtube validators we can just uh call this probably with another name but then we have the features and inside the feature we will have as but we know as a feature uh gustavo and then each feature will be responsible
+Them [29:45]: for each configuration
+Them [30:08]: but also we can remove the uh leave there leave is just uh because uh because i generated this and then we have all the components that are related to these feature the projectation also uh it's just if we want to do it uh very specific very describe it so we can specify things there related to also nx but that's how i see it
+Them [30:57]: i don't know why what do you think of course in the nx structure we also have what we call share that's very common to have it in mostly for ui components that are shared util's http of course you have some uh interceptors you have some uh clients that you will define here or like uh middlewares et cetera et cetera interfaces or even store management like store saying like uh in this case the state and the translations for sure uh this is how i say it so i don't know how align is also with your vision gustavo something like this of course we can improve this one a lot this is something that i have used in the past but not completely but something very similar to this
+Them [31:03]: yes that's simple example by the power of an x
+Them [31:10]: but uh i do i do this to another way
+Them [31:29]: and it's given your example it's perfect with how i like to design the price and where it's from sharing layer for across and continue to then clear separation of business models which oneself contained and independence and we've annexed we can scale a disease
+Them [31:40]: i have men experience using nacs and several projects and that's a great option
+Them [31:41]: that's a great option
+Them [32:27]: what do you think gustavo remember that here core it says project in some sub layers that i think is not necessary for example if you go to the orders you see the project json under data access uh that was my mistake like things you'll be on their orders instead of the other ones because then or we can consider like if we want to consider data project to see it in the graph and to have a soma specifications there we can do it but uh we are flexible there we can just define it in the model level where we can go more deep and we can define it probably in a feature level uh to see it better in the graph but yeah gustavo i don't know what do you think about it
+Them [32:37]: i think we lost gustavo
+Them [32:50]: i'm here and yeah well i already uh i think oswaldo we're like online i remember that i already told you what are my expectations to this so i think you already have that clear
+Them [33:47]: and my idea is to have something similar that we have right now in backend to express the architecture and the structure of what we have in backend but not let's say i don't want to implement something that is not a automatic two angular and what i saw in some implementation is that through nx and doing modular model it used in domain design is something that we can like we can we can reach to that approach i want to do something that like that and see if it's possible to promote this and to talk with luiz and ask if that is something that makes sense for him and if there is no conflict if we want to use a architectural like that that is that is my my idea so i want to follow that approach
+Them [33:53]: yep nice
+Them [34:01]: i mean uh as the rodrigo mentioned i think we can create we can elaborate a little bit more in the poc
+Them [34:06]: and we can bring it like in a more mature also stage
+Them [34:30]: and then we can consider if it's because they also uh rodrigo consider that this is something that we are checking that's why it's a poc because we want to see it if it's valuable for us or we want to continue like in like in a normal way to instruct a angular application but i think now with the new brush on in 21 we are very flexible
+Them [34:47]: to achieve something like this in the previous version it was going to be a headache because we have as you know the model concept and models are very like uh square like thing you cannot get out of the box
+Them [35:03]: they are defined of course you can do a lot of things but with all the dependencies all these things i think was going to be a headache now but i think this weekend achieve at least get closer to what gustavo is expecting based on the backend
+Them [35:08]: but yeah that's that's what i think gustavo and rodrigo
+Rodrigo [35:09]: that's my opinion
+Rodrigo [35:11]: exactly exactly
+Rodrigo [35:13]: okay okay
+Rodrigo [35:25]: a comfort agree with the new england reverse we can find a line of protagonic depth with the backhand module now clean and maintain your way
+Rodrigo [35:34]: this poc is the perfect opportunity to validate that align and prove the similar molely to property works entering
+Rodrigo [35:37]: and i will do that
+Rodrigo [35:53]: and so the next steps i do use i choose the folder extruder for follow the model as a prop should with the skill set for example modelers it and catalog and share it for cross - continued issues
+Rodrigo [36:13]: once that's in place we can date the next configuration it depends rules to reflect the new rate and do we give us to clear a visible our rat to the next level
+Rodrigo [36:17]: and that's it how we do that yeah we do that
+Them [36:23]: that's cool
+Them [36:27]: so how do you feel in doing this
+Them [36:31]: for i don't know if tomorrow or friday
+Them [36:46]: i don't know as well i think that you're going to be involved in this as well so let me know when we would be like tomorrow works birth with me can't stop yes yes yeah i think it's i think we can do it at the end of the day yeah
+Them [36:53]: so we can give some time to rodrigo to also check it and then we can come back
+Them [37:04]: also rodrigo i want to suggest one more thing but we can see it as a second phase for the uh poc
+Them [37:16]: it's about i was discussing with liz uh sadly i couldn't put rodrigo because he was appearing as an external but if i have another conversation i will try to include you rodrigo
+Them [38:37]: about uh the catching strategy so i propose a few options to luis and i feel libraries and a few new concepts that are coming to angular uh but we decided that we will go to the basic ones so we will try to do a combination with ngrx and signals so that uh that's quite common but that by itself doesn't have like a catch in a strategy so i was thinking also if we can uh if we can create like a another like yeah another release of the poc let's say a second phase where we can see also this strategy right to create something uh global use ngrx and combine it with signals and just create a concept of catching and also invalidating the requests after we update something uh that was catched right for example creating a member of course that endpoint now is invalidated we don't need to show it in the catch again so i don't know what do you think gustavo if that makes sense to create a second phase for the poc and show also this this because we will include it in a lot of places so i think it makes sense that at least to test it and see how it behaves
+Them [38:39]: yeah that works
+Them [38:52]: yeah definitely that works and yeah just try to like to i just want to like to have that very clear it's the idea of having modular
+Them [39:07]: a structure that will be a little bit in my idea so when when someone interacts with the module let's say with the architecture in front end can like realizes
+Them [39:18]: how the structure aligns with our ui and with our backend i want to like express the same idea regardless of the repository you are working in
+Them [39:25]: that would be like the objective so if we are aligned on that i think that we can like do this second phase
+Rodrigo [39:29]: okay
+Them [39:30]: yeah
+Them [39:57]: yep and with that in mind also i think it's it's also a good example with the model model it because everything that it's related also to the uh actions and you know reducer effects whatever selectors that are inside ngrx we can keep it also encapsulated in each model right gustavo so it's clear that we will have here everything that is related to ngrx
+Them [40:08]: but also we'll have the types we will have the views and everything related to the model so it's really i think that's why i suggested uh do it in here because then we can structure it that way also
+Them [40:10]: yeah perfect
+Them [40:11]: that works
+Rodrigo [40:27]: the cash innovation validation logically centralizing and share service or should it model is managing its own caching in the penway
+Them [40:31]: nothing
+Them [40:35]: i think we can keep it in a model level
+Them [40:45]: but yeah the logic we can keep it in a model level i think that makes sense strategical okay yeah
+Them [41:39]: yeah that is something that we can look at and tomorrow to say where the options and if there is a let's say something do we need to improve for example in backend we have like for cross cutting concerns things that let's say services that doesn't hold any like module specific logic we can have a shirt folder or shirt project in our case in backend so we can like use that intermodular so if that is something that you can hope that could work as well but if you think that maybe we can start doing like those services specific to a module that will work could work as well so let's see so let's work on that first like version of this second phase and we can see
+Rodrigo [41:43]: okay okay
+Rodrigo [42:00]: okay guys
+Them [42:00]: uh but but just just one thing rodrigo if you want just focus in the modular part first and then uh for friday we can do the second phase and check the global state and the catching port
+Them [42:07]: because if we combine probably that will be too much but at least for now the model are part it's it's okay i think
+Rodrigo [42:10]: okay okay i'll do that
+Rodrigo [42:18]: fox on modular street refers and with the global state caching for prior section
+Rodrigo [42:23]: okay
+Rodrigo [42:27]: yes
+Them [42:30]: gustavo anything else to finish
+Them [42:39]: uh do you have anything else
+Them [42:46]: no that would be that would be all that would be i will set up the session for tomorrow at the same time
+Rodrigo [42:47]: right great
+Rodrigo [42:49]: i'll do it for next
+Rodrigo [42:54]: i think we have another uh session later today right yeah
+Rodrigo [43:00]: so yeah like an hour in something right yeah and now we're on 15 minutes
+Rodrigo [43:01]: probably
+Them [43:06]: thank you guys thank you
+Them [43:07]: bye bye
+Them [43:08]: thank you
+Rodrigo [43:08]: bye

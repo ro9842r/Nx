@@ -1,0 +1,11 @@
+{
+  "name": "@my-workspace/orders/features/feature-checkout",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^21.2.0",
+    "@angular/core": "^21.2.0",
+    "@my-workspace/orders/data-access": "0.0.1",
+    "@my-workspace/orders/util-validators": "0.0.1"
+  },
+  "sideEffects": false
+}

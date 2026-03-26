@@ -1,0 +1,9 @@
+{
+  "name": "@my-workspace/catalog/ui-components",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/core": "^21.2.0",
+    "@my-workspace/catalog/data-access": "0.0.1"
+  },
+  "sideEffects": false
+}

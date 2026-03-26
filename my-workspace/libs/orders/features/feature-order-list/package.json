@@ -1,0 +1,10 @@
+{
+  "name": "@my-workspace/orders/features/feature-order-list",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/core": "^21.2.0",
+    "@my-workspace/orders/ui-components": "0.0.1",
+    "@my-workspace/orders/data-access": "0.0.1"
+  },
+  "sideEffects": false
+}

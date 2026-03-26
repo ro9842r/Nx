@@ -1,0 +1,6 @@
+<article>
+  <strong>{{ order().customerName }}</strong>
+  <div>id: {{ order().id }}</div>
+  <div>total: {{ order().total | number: '1.2-2' }}</div>
+  <lib-order-status-badge [status]="order().status"></lib-order-status-badge>
+</article>

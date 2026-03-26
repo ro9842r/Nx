@@ -1,0 +1,8 @@
+<section>
+  <h2>Browse Products</h2>
+  @for (product of products(); track product.id) {
+    <lib-product-card [product]="product"></lib-product-card>
+  } @empty {
+    <p>No products available.</p>
+  }
+</section>

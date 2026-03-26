@@ -1,0 +1,5 @@
+<article>
+  <h3>{{ product().name }}</h3>
+  <p>price: {{ product().price | number: '1.2-2' }}</p>
+  <lib-product-badge [featured]="!!product().featured"></lib-product-badge>
+</article>

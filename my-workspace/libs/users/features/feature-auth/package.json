@@ -1,0 +1,11 @@
+{
+  "name": "@my-workspace/users/features/feature-auth",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/core": "^21.2.0",
+    "@angular/forms": "~21.2.0",
+    "@my-workspace/users/data-access": "0.0.1",
+    "@my-workspace/users/util-validators": "0.0.1"
+  },
+  "sideEffects": false
+}

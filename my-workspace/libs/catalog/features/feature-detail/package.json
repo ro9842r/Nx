@@ -1,0 +1,10 @@
+{
+  "name": "@my-workspace/catalog/features/feature-detail",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/core": "^21.2.0",
+    "@my-workspace/catalog/data-access": "0.0.1",
+    "@my-workspace/catalog/util-validators": "0.0.1"
+  },
+  "sideEffects": false
+}
