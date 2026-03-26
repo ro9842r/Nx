@@ -5,7 +5,8 @@
   },
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/core": "^21.2.0"
+    "@angular/core": "^21.2.0",
+    "@my-workspace/shared/interfaces": "0.0.1"
   },
   "sideEffects": false
 }

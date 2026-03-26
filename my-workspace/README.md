@@ -28,6 +28,7 @@ Default app URL: `http://localhost:4200`.
 After starting the app, test the audit flow at:
 
 - `http://localhost:4200/audit/country-strategy/64`
+- `http://localhost:4200/country-strategy/detail/64` (detail page with direct link to audit)
 - or use the `Audit Country Strategy` link on home.
 
 ## External dependencies (outside this repo)

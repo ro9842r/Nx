@@ -64,6 +64,18 @@ export const appRoutes: Route[] = [
     ],
   },
   {
+    path: 'country-strategy',
+    children: [
+      {
+        path: 'detail/:id',
+        loadComponent: () =>
+          import('@my-workspace/country-strategy/features/feature-detail').then(
+            (m) => m.CountryStrategyDetail
+          ),
+      },
+    ],
+  },
+  {
     path: 'dashboard',
     loadComponent: () =>
       import('@my-workspace/features/dashboard').then((m) => m.DashboardPage),

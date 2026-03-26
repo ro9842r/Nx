@@ -46,6 +46,12 @@
         Catalog Detail
       </a>
       <a
+        [routerLink]="countryStrategyDetailLink"
+        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
+      >
+        Country Strategy Detail
+      </a>
+      <a
         routerLink="/dashboard"
         class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
       >
@@ -64,7 +70,7 @@
         Onboarding
       </a>
       <a
-        routerLink="/audit/country-strategy/64"
+        [routerLink]="auditCountryStrategyLink"
         class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
       >
         Audit Country Strategy

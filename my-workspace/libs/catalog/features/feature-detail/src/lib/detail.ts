@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { CatalogService } from '@my-workspace/catalog-core';
 import { isValidPrice } from '@my-workspace/catalog/util-validators';
+import { AuditEntityType } from '@my-workspace/shared/interfaces';
 
 @Component({
   selector: 'lib-detail',
@@ -16,6 +17,7 @@ export class Detail {
   private readonly catalog = inject(CatalogService);
   private readonly route = inject(ActivatedRoute);
   readonly selectedProduct = this.catalog.store.selectedProduct;
+  readonly auditEntityType = AuditEntityType.CatalogProduct;
   selectedProductId = '';
 
   constructor() {

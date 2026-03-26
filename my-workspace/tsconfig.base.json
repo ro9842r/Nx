@@ -66,6 +66,9 @@
       "@my-workspace/audit/features/feature-audit": [
         "libs/audit/features/feature-audit/src/index.ts"
       ],
+      "@my-workspace/country-strategy/features/feature-detail": [
+        "libs/country-strategy/features/feature-detail/src/index.ts"
+      ],
       "@my-workspace/shared/ui": ["libs/shared/ui/src/index.ts"],
       "@my-workspace/shared/util-http": ["libs/shared/util-http/src/index.ts"],
       "@my-workspace/shared/util-auth": ["libs/shared/util-auth/src/index.ts"],

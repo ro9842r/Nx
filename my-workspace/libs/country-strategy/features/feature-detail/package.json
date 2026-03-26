@@ -1,12 +1,9 @@
 {
-  "name": "@my-workspace/catalog/features/feature-detail",
+  "name": "@my-workspace/country-strategy/features/feature-detail",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^21.2.0",
     "@angular/core": "^21.2.0",
     "@angular/router": "^21.2.0",
-    "@my-workspace/catalog-core": "0.0.1",
-    "@my-workspace/catalog/util-validators": "0.0.1",
     "@my-workspace/shared/interfaces": "0.0.1"
   },
   "sideEffects": false

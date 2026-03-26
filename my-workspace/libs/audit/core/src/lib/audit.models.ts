@@ -1,7 +1,5 @@
-export enum AuditEntityType {
-  CountryStrategy = 'country-strategy',
-  CatalogProduct = 'catalog-product',
-}
+import { AuditEntityType } from '@my-workspace/shared/interfaces';
+export { AuditEntityType };
 
 export interface AuditRequestContext {
   entityType: AuditEntityType;
