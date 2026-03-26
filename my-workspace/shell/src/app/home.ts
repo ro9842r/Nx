@@ -9,6 +9,7 @@ import { AuditEntityType } from '@my-workspace/shared/interfaces';
   styleUrl: './home.scss',
 })
 export class Home {
+  readonly countryStrategyListLink = ['/country-strategy/list'];
   readonly countryStrategyDetailLink = ['/country-strategy/detail', '64'];
   readonly auditCountryStrategyLink = [
     '/audit',

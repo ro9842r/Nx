@@ -3,7 +3,7 @@ import { inject } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { RouterLink } from '@angular/router';
-import { CatalogService } from '@my-workspace/catalog-core';
+import { CatalogService } from '@my-workspace/catalog/core';
 import { isValidPrice } from '@my-workspace/catalog/util-validators';
 import { AuditEntityType } from '@my-workspace/shared/interfaces';
 

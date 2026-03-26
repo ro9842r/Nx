@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { inject } from '@angular/core';
-import { OrdersService } from '@my-workspace/orders-core';
-import { CatalogService } from '@my-workspace/catalog-core';
+import { OrdersService } from '@my-workspace/orders/core';
+import { CatalogService } from '@my-workspace/catalog/core';
 import { t } from '@my-workspace/shared/i18n';
 
 @Component({

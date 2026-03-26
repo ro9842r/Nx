@@ -5,7 +5,7 @@
   "prefix": "lib",
   "projectType": "library",
   "tags": [
-    "domain:audit",
+    "domain:country-strategy",
     "type:feature"
   ],
   "targets": {

@@ -64,6 +64,11 @@ Fontes: `package.json`, `nx.json`, `shell/project.json`.
 - `catalog-feature-browse`
 - `catalog-feature-detail`
 
+### Country Strategy (`domain:country-strategy`)
+
+- `country-strategy-feature-list`
+- `country-strategy-feature-detail`
+
 ### Shared (`domain:shared`)
 
 - `shared-ui`
@@ -145,7 +150,9 @@ flowchart LR
 - `/users/auth` -> `@my-workspace/users/features/feature-auth`
 - `/users/profile` -> `@my-workspace/users/features/feature-profile`
 - `/catalog/browse` -> `@my-workspace/catalog/features/feature-browse`
-- `/catalog/detail` -> `@my-workspace/catalog/features/feature-detail`
+- `/catalog/detail/:id` -> `@my-workspace/catalog/features/feature-detail`
+- `/country-strategy/list` -> `@my-workspace/country-strategy/features/feature-list`
+- `/country-strategy/detail/:id` -> `@my-workspace/country-strategy/features/feature-detail`
 - `/dashboard` -> `@my-workspace/features/dashboard`
 - `/checkout-flow` -> `@my-workspace/features/checkout-flow`
 - `/onboarding` -> `@my-workspace/features/user-onboarding`
@@ -288,7 +295,7 @@ Dica: para inspecionar targets de um projeto específico:
 
 ---
 
-## 10. Evidencias da iteracao Audit
+## 10. Evidencias da iteracao final da demo
 
 ### Mudancas entregues
 
@@ -297,15 +304,23 @@ Dica: para inspecionar targets de um projeto específico:
   - `libs/audit/features/feature-audit`
 - Nova rota: `/audit/:entityType/:entityId`.
 - Fluxo de concorrencia otimista com `ETag` / `If-Match` no modulo de audit.
-- Piloto de refatoracao em `catalog`:
-  - detalhe por id (`/catalog/detail/:id`)
-  - limpeza de arquivos de boilerplate nao utilizados em `catalog/core`.
+- Padronizacao de aliases de `core` para `@my-workspace/<domain>/core`.
+- Limpeza de boilerplate redundante em `orders`, `users` e `catalog`:
+  - remocao de componentes placeholder gerados e specs correspondentes
+  - adicao de specs minimos por projeto para manter `nx test` verde
+- Novo fluxo demonstravel de `country-strategy`:
+  - lista (`/country-strategy/list`)
+  - detalhe (`/country-strategy/detail/:id`)
+  - projeto Nx dedicado: `country-strategy-feature-list`
+- Reforco de boundaries:
+  - nova regra `domain:country-strategy` em `eslint.config.mjs`
+  - tags dos projetos de country strategy ajustadas para `domain:country-strategy`
+- Grafo arquitetural atualizado para apresentacao: `static/dep-graph.html`.
 
 ### Validacao executada
 
-- `npx nx run-many -t lint --projects=shell,catalog-core,catalog-feature-browse,catalog-feature-detail`
-- `npx nx run-many -t test --projects=shell,catalog-core,catalog-feature-browse,catalog-feature-detail`
-- `npx nx run-many -t lint --projects=audit-core,audit-feature-audit`
-- `npx nx run-many -t test --projects=audit-core,audit-feature-audit`
+- `npx nx graph --file="static/dep-graph.html"`
+- `npx nx run-many -t lint --projects=shell,orders-feature-order-list,orders-feature-checkout,orders-ui-components,orders-util-validators,users-feature-auth,users-feature-profile,users-ui-components,catalog-feature-browse,catalog-feature-detail,catalog-ui-components,features-dashboard,features-checkout-flow,features-user-onboarding,audit-feature-audit,country-strategy-feature-detail,country-strategy-feature-list`
+- `npx nx run-many -t test --projects=shell,orders-feature-order-list,orders-feature-checkout,orders-ui-components,orders-util-validators,users-feature-auth,users-feature-profile,users-ui-components,catalog-feature-browse,catalog-feature-detail,catalog-ui-components,features-dashboard,features-checkout-flow,features-user-onboarding,audit-feature-audit,country-strategy-feature-detail,country-strategy-feature-list`
 
-Resultado: todos os comandos acima executaram com sucesso.
+Resultado: comandos de lint e test executaram com sucesso para os projetos impactados.

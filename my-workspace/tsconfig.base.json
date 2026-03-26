@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@my-workspace/orders-core": [
+      "@my-workspace/orders/core": [
         "libs/orders/core/src/index.ts"
       ],
       "@my-workspace/orders/ui-components": [
@@ -30,7 +30,7 @@
       "@my-workspace/orders/features/feature-checkout": [
         "libs/orders/features/feature-checkout/src/index.ts"
       ],
-      "@my-workspace/users-core": [
+      "@my-workspace/users/core": [
         "libs/users/core/src/index.ts"
       ],
       "@my-workspace/users/ui-components": [
@@ -45,7 +45,7 @@
       "@my-workspace/users/features/feature-auth": [
         "libs/users/features/feature-auth/src/index.ts"
       ],
-      "@my-workspace/catalog-core": [
+      "@my-workspace/catalog/core": [
         "libs/catalog/core/src/index.ts"
       ],
       "@my-workspace/catalog/ui-components": [
@@ -60,7 +60,7 @@
       "@my-workspace/catalog/features/feature-detail": [
         "libs/catalog/features/feature-detail/src/index.ts"
       ],
-      "@my-workspace/audit-core": [
+      "@my-workspace/audit/core": [
         "libs/audit/core/src/index.ts"
       ],
       "@my-workspace/audit/features/feature-audit": [
@@ -68,6 +68,9 @@
       ],
       "@my-workspace/country-strategy/features/feature-detail": [
         "libs/country-strategy/features/feature-detail/src/index.ts"
+      ],
+      "@my-workspace/country-strategy/features/feature-list": [
+        "libs/country-strategy/features/feature-list/src/index.ts"
       ],
       "@my-workspace/shared/ui": ["libs/shared/ui/src/index.ts"],
       "@my-workspace/shared/util-http": ["libs/shared/util-http/src/index.ts"],

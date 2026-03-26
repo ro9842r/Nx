@@ -33,6 +33,13 @@ export default [
               onlyDependOnLibsWithTags: ['domain:audit', 'domain:shared'],
             },
             {
+              sourceTag: 'domain:country-strategy',
+              onlyDependOnLibsWithTags: [
+                'domain:country-strategy',
+                'domain:shared',
+              ],
+            },
+            {
               sourceTag: 'domain:shared',
               onlyDependOnLibsWithTags: ['domain:shared'],
             },
@@ -44,6 +51,7 @@ export default [
                 'domain:users',
                 'domain:catalog',
                 'domain:audit',
+                'domain:country-strategy',
                 'domain:shared',
               ],
             },

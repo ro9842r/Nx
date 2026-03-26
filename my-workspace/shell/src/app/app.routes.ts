@@ -67,6 +67,18 @@ export const appRoutes: Route[] = [
     path: 'country-strategy',
     children: [
       {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'list',
+      },
+      {
+        path: 'list',
+        loadComponent: () =>
+          import('@my-workspace/country-strategy/features/feature-list').then(
+            (m) => m.CountryStrategyList
+          ),
+      },
+      {
         path: 'detail/:id',
         loadComponent: () =>
           import('@my-workspace/country-strategy/features/feature-detail').then(

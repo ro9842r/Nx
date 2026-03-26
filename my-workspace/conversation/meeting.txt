@@ -1,0 +1,318 @@
+Me | 4:33 PM
+personal
+Them | 4:33 PM
+gente que vimos pero lo vamos a analizar ya pronto recomendé unos cambios pero vamos a ver que si rodrigo los pudo ver hola rodrigo
+Them | 4:34 PM
+hola rodrigo ¿cómo vas
+Them | 4:34 PM
+bien
+Them | 4:34 PM
+bueno bien bien
+Them | 4:34 PM
+derek también fue invitada a esta sesión
+Them | 4:34 PM
+sí
+Them | 4:34 PM
+ok pero no contestó así que sí bueno vamos a darle chance antes de empezar un ratito
+Them | 4:34 PM
+a ver si se logra unir
+Them | 4:34 PM
+ahí está derek
+Them | 4:34 PM
+ya podemos empezar si es que están ready to go
+Them | 4:34 PM
+ok
+Me | 4:34 PM
+one second
+Me | 4:34 PM
+sure
+Me | 4:36 PM
+all right
+Me | 4:36 PM
+we can start now
+Me | 4:36 PM
+that's that's application here
+Them | 4:36 PM
+can you sorry to interrupt can you just zoom in a little bit because it looks like tiny
+Them | 4:36 PM
+the the folders a little bit just a little bit you can make
+Me | 4:36 PM
+see i don't know how i don't know you're
+Them | 4:36 PM
+just in mat
+Them | 4:36 PM
+no no
+Them | 4:36 PM
+should be control
+Them | 4:36 PM
+and plus
+Me | 4:37 PM
+ctrl zoom is not work let me see let me see probably have zoom and grisser let me see reference for file
+Me | 4:37 PM
+i don't know
+Me | 4:37 PM
+why
+Me | 4:37 PM
+we're search settings probably
+Me | 4:37 PM
+let me see
+Me | 4:38 PM
+let me see how can i use the settings let me searching
+Them | 4:38 PM
+maybe in view you get a build menu
+Me | 4:38 PM
+probably see probably at
+Me | 4:38 PM
+zoom mode zoom in
+Me | 4:38 PM
+zoom in
+Them | 4:38 PM
+at the bottom zoom in about oh yeah yeah yeah oh yeah it's true
+Them | 4:38 PM
+it's
+Me | 4:38 PM
+good yeah
+Them | 4:38 PM
+let's start now
+Them | 4:38 PM
+let me see when i'm when i'm going to start about talk about the enx and and so this is your nx workspace on the left you can see main structure and the shell app works as the hose into lives we have all the domain libraries like orders uh users
+Me | 4:39 PM
+sorry
+Them | 4:39 PM
+yeah yeah i'm full of win
+Me | 4:39 PM
+all right and this help us uh keep the act tattery clean scalable and using to maintain
+Me | 4:39 PM
+and uh
+Me | 4:40 PM
+so you can see here uh this is this is an x workspace help us uh for many problems and for example in my opinion of course i like because this is well organizing by domain and each domain like orders uh users and catalog heads its own car y into bluetooth and feature layers and the shell app act as the host buy uh reuting global configuration why share it libraries handle cross domain using uh utilities and design system components uh this is structure all is all of us to involve each domain depending without losing uh integration inside the same on a repo and that that that's that's uh that's there are that organization uh
+Me | 4:40 PM
+and uh let's talk about the the shell uh let's open here
+Me | 4:40 PM
+the shell uh is the whole staff the entire space uh it manages housing global providers and lazy loading for it domain for example uh how it's like uh orders list uh
+Me | 4:41 PM
+or users for file or loading dynamically for from their respective filtery libraries the skip to start to start a life h and all of each domain to revolving the penduly and that shell doesn't contain business logically it's only registrates and connects the domains together
+Me | 4:41 PM
+and and you have uh some question
+Them | 4:41 PM
+no clear so far
+Them | 4:41 PM
+all right uh let's talk about uh talk about uh lab is now and the libis uh is uh
+Them | 4:41 PM
+is for example uh
+Them | 4:41 PM
+let's talk about uh one of the mains isn't it more easier for example uh the order's domain
+Them | 4:42 PM
+it's here this order's domain uh inside the library's artist we follow the same model structure uh core ui components and youtube validators and features and the car layer contains the business lodge kit services and stories and the u - compensa layer uh hold usable visual components and features presents complete years of flows like uh present or at least or check out and the separation all is all of us to scale and test each part independently while unkeeping domain and clear
+Me | 4:42 PM
+and uh
+Me | 4:42 PM
+let me see kinjix is playing a little bit what uh like the structure of fortress what would be the core data axis
+Me | 4:42 PM
+features i just want to understand for example
+Me | 4:43 PM
+where i i i believe that in features is the place but just want to make sure can you expand features i just want to say what you have what you have there
+Me | 4:44 PM
+um yeah yeah um uh and uh and uh no r for example um yeah but uh i answer your question first and yeah exactly uh the figure of folder is where we implement complete user flows or pages and for example uh here we have uh fig tree uh other list uh future checkout and each feature connects the ui components and the domain logic from the car layer the separation help us for example to keep business logical y is to build gen - to - end experiences for a user and that's it
+Me | 4:44 PM
+okay
+Them | 4:44 PM
+can you expand a little bit the features folder i just want to see some of course yes uh futures here uh side orders sorry yeah
+Me | 4:45 PM
+the futures insider orders uh we have two main features and we have to have a feature order list and for to check out and each one represents a complete user flow and for example fit for order list handlers list it and loading orders from the artist services white feature check out manages the checkout for us is include validation and order creation uh both features consume logical from the car layer and use the ui components from the ui components and this extruder keeps each figure unself container and easy to test or revolve independently
+Them | 4:45 PM
+okay uh i just want to understand what you have all those files
+Them | 4:45 PM
+for any specific feature
+Them | 4:46 PM
+yes what is the idea i can i can explain here and because we saw it before in the afternoon uh i think rodrigo already uh knows that this will be uh because all these files are created by uh by nx right when you create a project uh because the project you can export and everything but in a feature level we don't need all this file that will be the same for data access and that will be the same for i think for the other one the ui components and you are validators the ideas we will have all these files or the definition for a project with all the dependencies and everything in uh in a library level let's say this will be just like uh i think he already knows that we will remove everything and we will just define it there uh because i think he created everything as uh project inside an ex the features but the idea is to have it just in a library level the same as in a project level in this case will be the shell uh that's that's the idea i really sorry gustavo
+Them | 4:46 PM
+say because actually a model
+Them | 4:47 PM
+yeah yeah
+Me | 4:47 PM
+so the idea is skipped to the next project diplay only at the library level not for every internal featuring and each module each featuring will just be a folder inside the main library uh with that with its own the project json or building configuration this way uh we reduce duplication keep the structure clearly and the fool and axe project set up where remained for libraries that really need to independence building lights or testing targets
+Me | 4:47 PM
+okay
+Them | 4:47 PM
+and when do you mention that a
+Them | 4:47 PM
+when you mention that we will need
+Them | 4:47 PM
+that like
+Them | 4:47 PM
+that configuration per module is because you think that we need to manage dependencies per a module is that the idea dependency send configuration per module
+Me | 4:48 PM
+uh the idea is a good question because
+Them | 4:48 PM
+you you have a package json per module yeah good question but not necessarily we don't need to manage it depends is per modeler in most cases the idea of having a separate and next project configuration only applies where a modem truly un - need isolation for example if uh it does its own building pipeline independent testing or a specific kit depends as that should be affected the rest are for workspace uh but for most featuring side of the main uh they can share the same configuration at the library level that's keep things uh simpler and avoid necessary maintainers here overhead
+Them | 4:48 PM
+okay osvaldo
+Them | 4:50 PM
+y i was going to say it was exactly the same package json doesn't mint uh that you are adding dependencies it's most it's it's probably uh it's uh what a package does it's described the project right so you can just literally specify there that you are exporting a library or something like that that's why i mentioned that a celibrary level makes sense but uh as uh or as a model because models yeah and the important part uh gustavo also that's why i was saying that uh the idea is to use nx at this point or all the capabilities to create uh the file that we need is actually the project one because in the project one we will define or this is the one that uh nx will use to to track the dependencies between these libraries between the uh in this case the show but we probably will have other uh applications in the future i don't know kobe and that will create the graph tree that we want right or the visual one that we want to see that it's like for example oh the shell is using orders is using catalog using this but the color looks inside it's also using this zoom model and so on right so uh we don't need all the files that's why i was saying even like uh the tier config and all this uh as i mentioned could be just one and we just inherited this that's what annex does in some uh most of the the time uh but yeah just consider that we'll be in a model model level could be even in a library but uh as i mentioned we could have a library as a model but imagine that we have another sub model inside that in that case makes sense because you could you want to see the dependency tree inside uh nx right but if it is just a library and it's just for one model we just need one time this specification files
+Me | 4:50 PM
+yeah yeah i completely agree
+Me | 4:51 PM
+the mango is to the kip the next configuration the library level since that what next uh uses to build to depends a graph between libraries and applications like shell and does it this way uh we can realize uh how each domain connects without duplication configuration files uh that that's a good point
+Me | 4:51 PM
+okay well okay
+Me | 4:51 PM
+my first feedback regarding today is that well first it is uh
+Me | 4:52 PM
+what we have to to do here is that we need to with the idea if we go to to a presentation with lois jds to have this like ready to show not to try i understand that you're right now are like explaining the to the version of it but the idea is that we we need to have this ready it is to run it to have this ready and to to show that and that is my first feedback because i understand what you're saying but it is to have like a real example of what are we going to work with that's my first point the others the other idea is that for example in button we have like two levels
+Me | 4:52 PM
+and under a module we have features that represent like the main entities the way you are working with and that the use cases that are like the main actions under the feature so that i don't know if you feel that
+Me | 4:52 PM
+that approach could be a good fit in angular and i think that that could work but i don't know if i'm like i don't know maybe i am a
+Them | 4:53 PM
+running the kings any like a specific item - magic ruling angular but i don't feel that it's kind of like confused people when working with angular i don't know but that would be like my idea trying to organize like features and use cases in that way
+Them | 4:53 PM
+that's my first feedback the other thing is that can we check a little bit the odd folders i just want to understand can you collapse the features folder please rodrigo i just want to see the other folders under the module
+Me | 4:53 PM
+no no the the feed the the feature folder that is a inside the order module can you collapse that
+Me | 4:53 PM
+let me see let me see
+Me | 4:53 PM
+uh
+Me | 4:53 PM
+the shell i don't see it i don't see it
+Me | 4:54 PM
+no the features folder that you have yeah
+Them | 4:54 PM
+yeah collapse that i just want to understand the responsibility of the other folders for example what does this core folder does
+Them | 4:54 PM
+all
+Me | 4:54 PM
+right uh
+Me | 4:54 PM
+expanded i just want to see what files do you have orders orders no or
+Them | 4:54 PM
+no poor the core folder alright the corn what you have in court sorry sorry uh what is the idea of that core folder
+Me | 4:54 PM
+all right uh the idea the core for order uh you can see the main files that define the domain lodge kiwin for example we have order services uh here
+Me | 4:55 PM
+uh we have an order server see and which handles all the business operation like loading and creating orders and artist stars and with management the react state to use in angular signals and orders api which is responsible for communicating uh with the backhand or remorket data this files represent the core of the orders of amend they provide a data and launch adapt of your tree and ui components consume
+Them | 4:55 PM
+that
+Me | 4:55 PM
+that's the that's a responsibility to to core and
+Me | 4:55 PM
+i don't know i don't know if you understand me
+Them | 4:55 PM
+uh yeah yeah i got the idea of having
+Them | 4:55 PM
+a drug span that that again i just want to say what are the other files you have can you expand that
+Them | 4:55 PM
+will have the models uh services
+Them | 4:56 PM
+uh
+Them | 4:56 PM
+other archety type definitions also
+Them | 4:56 PM
+can you expand the live one uh
+Me | 4:56 PM
+so on the lib here yes yeah please just want to see okay you you got the orders api that is that is what the client goal
+Me | 4:58 PM
+that is can you open that okay that is well i don't know whether there is that that's like trying to yeah i'll explain uh to you uh here you can see the order to pay close which simulates the backhand for now it's it has true uh local enemy release of all orders and exposes through main methods and leads into return artists and created to create a one uh this is allows to test to full flow from the ui uh to the serve scan story uh we don't need a real backhand yet later this class can easily be represent by an attp base implement and use an angular attp client and keep the same interface and extrude tree but i don't but i don't have but i don't have assets uh to any repro starty now i'm trying to understand yes i'm trying true true demonstrate the power of an axe but uh in my conception i don't know how uh because i don't know how the things works inside the brush because i know cn i don't see it in terms of codes and i know i know study and i know explore all the files and right now i'm just demonstrate in the local setup to show how an axe organized domain through to and even with doubt backhand axis we can write a simulate the full flow using this in memory api and the goal is to highlight how each layer uh api service history and fig tree connects inside the nxw space and once we have a satisfaction can you go to order service i just want us to something
+Them | 4:58 PM
+the order that service ts
+Me | 4:58 PM
+sure uh let's open yeah let's open artists one sec
+Me | 4:58 PM
+and
+Them | 4:58 PM
+you go to that
+Me | 4:58 PM
+stairs is the main oxtrator from the orders domain
+Me | 4:58 PM
+okay yeah yeah
+Them | 4:58 PM
+for example this is just like an open suggestion or maybe comment and i don't know
+Them | 4:59 PM
+how this could be like implemented in angular to not lose or to not violate any likes automatic or standard in angular but what would be the impact if i create below my lib a let's say orders and below my uh we're going to have a
+Them | 4:59 PM
+feature
+Them | 4:59 PM
+shirting the code this way it is in violate any angular standards
+Them | 4:59 PM
+i just want is one to understand this is like uh this is like the whole service that is going to be used by all the features that's the idea right
+Me | 4:59 PM
+yeah
+Them | 5:00 PM
+okay is it possible that we can have a more granular a services and locate those granular services into each specific feature is that something that is very for example it's what we it is what we do in uh in backend using vertical slice architecture dd is that if i need to modify something i just go straight for the work to a specific location in this in our case the use cases everything that i need to like change at most cases is under a specific folder for example if i right now need to let's say
+Them | 5:01 PM
+3 - 8 or sorry or modify a specific feature i need to go to two places right i need to go to the feature itself and then go to the orders a corp sorry to the core folder to do that i'm not saying that is but what i'm saying is that is there a possibility to locate the things that change that usually change together in the same location physical location or that it that like breaks a little bit
+Me | 5:02 PM
+yeah that's great point i don't know
+Them | 5:02 PM
+i'm asking that i'm asking this because yes that's weird point and yes it's possible to colocate these files that usually chain together without breaking angular standards the k is to find the right balance and the sharing domain logic like the order service will restore we can uh you can stay it can't stay and to the core layer and but if a specific future has large kit that all belongs to the dev feature tree we can move it closer inside the fixture flow the uh for example a next supports the sky north vert co - organization is very well so for example that checkout filter cool have it's always small services for validation or payment uh wireless to you using the shareholder service for data assets this way we keep uh related code together and still respect anglers modeler uh boundaries
+Me | 5:03 PM
+and yeah the so and destroyer the idea is to uh what changes together but only when it makes sense for on the domain perspective and share logic stay in the car layer why featuring specific logic can live inside the vitrifolder and this approach keeps the actator modular and radio cable and we can at least find what to modify without duplicating code or break anglers depend to rules it's uh it's a balance between vertical slice organization and domain driving modularity and act supports buff patterns very well
+Them | 5:03 PM
+okay
+Them | 5:03 PM
+just want to to know if there is any other possibility to organize this but if that is how that usually works
+Them | 5:03 PM
+and that yeah there is no problem for me what i would like to see is something that that is like ready to show is i don't know maybe
+Them | 5:04 PM
+how can we handle this just to have like a final version of it is that possible to have it for i don't know before i don't know if for tomorrow that works or maybe for monday but the idea is to have it i just like to to play now everything up and have like the final structure is that possible to have it for for i don't know maybe monday or just so you can
+Them | 5:04 PM
+but you may well what i mean is that for example for this stuff that has to do with a let's say features we already have all these files dds to clean it up and to have a final like clean version of it and start seeing what the
+Them | 5:04 PM
+final structure and the just to alignation could you please uh clarify what a spec uh you'd like us to prepare for the final version and do you mean having the food street tree cleaned up or also having the figure is browning uh with the ui connected
+Me | 5:04 PM
+i need more context here
+Them | 5:05 PM
+yeah well it's what i try to like to look for this is like i need
+Them | 5:05 PM
+a final structure where we have but what i mean final is not only let's say i don't want to feel like the organization itself
+Them | 5:06 PM
+i need to see like what are the final version of the files inside any block that we built for this architecture for example in this case it is okay for me to select like for example counter strategy you got it perfect inside counter strategy the idea is that you guys can explain okay we're going to propose this structure this for example golf order is going to be responsible for a cross - cutting let's say object sort of services that are going to enable let's say client to the back - end api is manage a storage like having all the models that's a little bit the idea then if you have another thing let's explain that but the idea is to have in a final version for example i'm seeing like uh i know that you explain it but i'm still like every time i open a new folder i'm saying a source folder again and a lip folder again and i i don't think and maybe i'm wrong but let me know that is that like looks like the final version of what i'm looking what we're trying to look for or not is that the source folder the late folder all the files that looks like packages and project json ts config is that is that the final i don't think so because you explained me that you need to clean that up right
+Me | 5:07 PM
+um so that that that that's
+Them | 5:07 PM
+what i'm looking what i'm looking is like everything clean you already did this this because if i'm saying that maybe if you're going to show this to luis louis is going to say okay it is all these fires are needed for this like folder you know if you follow so i understand what you're trying to explain and that's cool
+Them | 5:08 PM
+but let's let's let's move this to the next phase that is try to have this clean and with the final version and then we can like go to luis and present this but the idea is to explain okay this is the structure this is all the folders each folder has this responsibility with this structure we can protect our architecture from any light invalid references we can protect our boundaries doing this we can doing that but already in place not just theory the ideas that we can show louis what we already have and what are like the propulse the idea behind our uh the idea we have our proposal that is a little bit what i'm trying to look for
+Them | 5:08 PM
+so for the next for the next presentation that we have i expect to have in that
+Me | 5:09 PM
+all right okay okay perfect uh okay so the so the next first will be to finalize everything and clean up this filter tree removes uh red doot and folders and make sure it domain has its fire its final files in the place what i think even what i think is that we already have a version of country strategy in angular maybe we can do something like that not to develop everything because the idea is not to develop all the options but at least for example we have at least for now to a use cases we have the list country strategies we have the biopunter strategy at least those two with uh i don't know with a blank page or stuff like that but the idea is that you can route both but
+Them | 5:10 PM
+among that the idea is that you can show the final structure and say okay this is how this is going to be this is the structure we have how that is different from our current approach and how that count led us to be more modular to be more like flexible and to have the ability to add more modules without breaking anything without increasing complexity without increasing high dependencies without you know that that is what i'm looking for is to show a final version of it and explain in
+Them | 5:10 PM
+the differences from our burden approach and what are the benefits of using this option instead of the one that we are just right now okay
+Me | 5:10 PM
+okay okay yeah alright perfect uh alright for the next presentation uh we'll show the final version of the extrudery and explain how it's g - first for our career interrupt
+Them | 5:11 PM
+sure perfect i think you're doing a good work so far i'm following everything just we need to like have this final version of it so we can like start testing because right now we are like trying to understand all the structure but the idea is that for example you can run a architectural test using nx graph dependencies so we can see if i'm trying to like i don't know to import a invalid dependency from another module that should not be violated dds that i can see oh well i can do do this stuff with my new structure that is a little bit the idea but for that you need to have a final version of it okay
+Them | 5:11 PM
+okay okay okay okay okay yeah that works i don't know if you osvaldo
+Them | 5:11 PM
+already have like the the main point
+Them | 5:12 PM
+no no no of course and uh as i mentioned uh gustavo this is uh in progress version so we check it in the afternoon we improve a little bit the structure uh but not the jet like uh person we already knew that so the idea was to that basically that it was explaining explain your day and not the final result a way you already know that if we go to list we need to convince him and we will have a ready version uh i shared one post with you here guys uh if you can take a look because i created something similar like this but we react but i see that it's pretty similar to with angular and it's very scalable version of it and it's used in uh and that is pretty much what we are looking for exactly exactly because it's using uh slice architecture uh so
+Them | 5:13 PM
+i think it's this is what what uh gustavo is looking for rodrigo sorry we're going to get confused with the names but i think with something like this we are ready the only thing that we are missing here is like it's not showing a specifically what uh rodrigo is sharing like for example i think i really think that we need the core section because in the core we will define everything of course we can divide it a little bit more uh but yeah thing this is a good guidance for it
+Them | 5:14 PM
+sure yeah definitely definitely i think that taking a look at this and trying to like because like what you should like a good article and show us the idea of having like modular like isolation and that's what we are trying to implement in backend and i feel that we can get the same in front and this is an article that represents that but at the end of the day this is a reference so we can get that and take that as an aspiration and trying to like to land that into our case that would be like uh the idea so take look together because you have access followed to the current repo and maybe we can try to represent what we already have in this new structure but only with the two like the two options we already have to listen to view but let's say it again i'm not looking for the for like the final stage that we already have not that if we can show that we can wrote to different options that's cool uh an empty page with just with the title it's okay
+Them | 5:14 PM
+and if you want to consume one backend endpoint that would be great as well not problem with that but the most important thing of this is to have like the whole structure twin and ready to like to see the the benefits of it
+Them | 5:14 PM
+yeah that would be all
+Me | 5:14 PM
+perfect that's clear
+Me | 5:16 PM
+okay so okay let's see if you wonder let's check it uh together the the this article and this define all the things that we want to add on each section um and even if uh here gustavo if you rated a little bit more you will see that those files that you saw not we don't need all of them of course but at some point you will see that there is some for example uh package uh json or something or ts because in the example what they are explaining it is like for example they expose as library uh yeah i i i i i understand that definitely and yeah my problem is not with package but as i saw the whole thing not only package json but the old files it confused me a little bit so that's the idea but but but i understand your point that we need that to reference it as libraries for the whole project and yeah yeah that is okay and just let's see it as the final version and we can like start thinking more about the other things and the pending stuff we have but yeah but i i take with me the whole idea so yeah at that point cool but let's move to the next step
+Me | 5:16 PM
+makes sense
+Me | 5:17 PM
+this word for me
+Me | 5:17 PM
+okay okay thank you so much uh rodrigo for the for the for the work i know that's been a little bit difficult for you to to try to follow the whole idea because you don't have access yet you're not seeing where we are what we have right now and it's part of the importing process here in the bank because asvaldo under i can't tell you that it is a pain in the ass to wait for it to wait for for access but it is what it is
+Me | 5:17 PM
+right tomorrow guys
+Me | 5:17 PM
+okay guys thank you for the time thank you bye
+Me | 5:17 PM
+thank you

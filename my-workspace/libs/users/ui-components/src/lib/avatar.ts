@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { input } from '@angular/core';
-import { User } from '@my-workspace/users-core';
+import { User } from '@my-workspace/users/core';
 
 @Component({
   selector: 'lib-avatar',
