@@ -1,0 +1,12 @@
+{
+  "name": "@my-workspace/audit/features/feature-audit",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^21.2.0",
+    "@angular/core": "^21.2.0",
+    "@angular/forms": "^21.2.0",
+    "@angular/router": "^21.2.0",
+    "@my-workspace/audit-core": "0.0.1"
+  },
+  "sideEffects": false
+}

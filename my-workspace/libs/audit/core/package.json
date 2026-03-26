@@ -1,0 +1,11 @@
+{
+  "name": "@my-workspace/audit-core",
+  "nx": {
+    "name": "audit-core"
+  },
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/core": "^21.2.0"
+  },
+  "sideEffects": false
+}

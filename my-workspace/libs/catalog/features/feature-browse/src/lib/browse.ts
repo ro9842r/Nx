@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { inject } from '@angular/core';
-import { CatalogService } from '@my-workspace/catalog/data-access';
+import { RouterLink } from '@angular/router';
+import { CatalogService } from '@my-workspace/catalog-core';
 import { ProductCard } from '@my-workspace/catalog/ui-components';
 
 @Component({
   selector: 'lib-browse',
-  imports: [ProductCard],
+  imports: [ProductCard, RouterLink],
   templateUrl: './browse.html',
   styleUrl: './browse.scss',
 })

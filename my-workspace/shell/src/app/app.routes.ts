@@ -55,7 +55,7 @@ export const appRoutes: Route[] = [
           ),
       },
       {
-        path: 'detail',
+        path: 'detail/:id',
         loadComponent: () =>
           import('@my-workspace/catalog/features/feature-detail').then(
             (m) => m.Detail
@@ -80,6 +80,13 @@ export const appRoutes: Route[] = [
     loadComponent: () =>
       import('@my-workspace/features/user-onboarding').then(
         (m) => m.OnboardingPage
+      ),
+  },
+  {
+    path: 'audit/:entityType/:entityId',
+    loadComponent: () =>
+      import('@my-workspace/audit/features/feature-audit').then(
+        (m) => m.AuditPage
       ),
   },
 ];

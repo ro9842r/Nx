@@ -1,0 +1,12 @@
+{
+  "name": "@my-workspace/orders-core",
+  "nx": {
+    "name": "orders-core"
+  },
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/core": "^21.2.0",
+    "@ngrx/signals": "^21.1.0"
+  },
+  "sideEffects": false
+}

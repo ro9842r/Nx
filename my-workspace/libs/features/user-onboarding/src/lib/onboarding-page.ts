@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { inject } from '@angular/core';
-import { AuthService } from '@my-workspace/users/data-access';
-import { CatalogService } from '@my-workspace/catalog/data-access';
+import { AuthService } from '@my-workspace/users-core';
+import { CatalogService } from '@my-workspace/catalog-core';
 
 @Component({
   selector: 'lib-onboarding-page',

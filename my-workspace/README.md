@@ -4,6 +4,54 @@
 
 ✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
 
+## Local setup (Windows)
+
+Run commands from `my-workspace` using PowerShell:
+
+```sh
+npm install
+npx nx serve shell
+```
+
+Default app URL: `http://localhost:4200`.
+
+## Operational commands
+
+- Start host app: `npx nx serve shell`
+- Lint all: `npx nx run-many -t lint --all`
+- Unit tests all: `npx nx run-many -t test --all`
+- E2E smoke: `npx nx e2e shell-e2e --excludeTaskDependencies`
+- Project graph export: `npx nx graph --file=./nx-graph.html`
+
+## Audit feature quick route
+
+After starting the app, test the audit flow at:
+
+- `http://localhost:4200/audit/country-strategy/64`
+- or use the `Audit Country Strategy` link on home.
+
+## External dependencies (outside this repo)
+
+The following items were discussed by the team but are not provisioned in this frontend repository:
+
+- Published backend artifacts/packages (latest channel version).
+- Local infrastructure containers (`compose up`) used to mimic enterprise services.
+- SQL Server/Azure SQL local connectivity and credentials.
+- Real migration execution flow (`clean` + migration scripts).
+
+Use this checklist when onboarding a new teammate:
+
+1. Confirm latest backend artifact/package versions are shared in team channel.
+2. Run infra setup in the backend/ops repository (containers and migration scripts).
+3. Validate DB access with project credentials before integrating frontend requests.
+4. Return to this repo and run `npm install` + `npx nx serve shell`.
+
+## Troubleshooting
+
+- If E2E fails because port `4200` is already used, stop running `shell:serve` processes first.
+- If generated artifacts look stale, run a clean command in the infrastructure repo before rerunning migrations.
+- If audit update returns conflict, click `Refresh` in the audit page and retry.
+
 [Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 
 ## Run tasks

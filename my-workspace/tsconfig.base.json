@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@my-workspace/orders/data-access": [
-        "libs/orders/data-access/src/index.ts"
+      "@my-workspace/orders-core": [
+        "libs/orders/core/src/index.ts"
       ],
       "@my-workspace/orders/ui-components": [
         "libs/orders/ui-components/src/index.ts"
@@ -30,8 +30,8 @@
       "@my-workspace/orders/features/feature-checkout": [
         "libs/orders/features/feature-checkout/src/index.ts"
       ],
-      "@my-workspace/users/data-access": [
-        "libs/users/data-access/src/index.ts"
+      "@my-workspace/users-core": [
+        "libs/users/core/src/index.ts"
       ],
       "@my-workspace/users/ui-components": [
         "libs/users/ui-components/src/index.ts"
@@ -45,8 +45,8 @@
       "@my-workspace/users/features/feature-auth": [
         "libs/users/features/feature-auth/src/index.ts"
       ],
-      "@my-workspace/catalog/data-access": [
-        "libs/catalog/data-access/src/index.ts"
+      "@my-workspace/catalog-core": [
+        "libs/catalog/core/src/index.ts"
       ],
       "@my-workspace/catalog/ui-components": [
         "libs/catalog/ui-components/src/index.ts"
@@ -59,6 +59,12 @@
       ],
       "@my-workspace/catalog/features/feature-detail": [
         "libs/catalog/features/feature-detail/src/index.ts"
+      ],
+      "@my-workspace/audit-core": [
+        "libs/audit/core/src/index.ts"
+      ],
+      "@my-workspace/audit/features/feature-audit": [
+        "libs/audit/features/feature-audit/src/index.ts"
       ],
       "@my-workspace/shared/ui": ["libs/shared/ui/src/index.ts"],
       "@my-workspace/shared/util-http": ["libs/shared/util-http/src/index.ts"],

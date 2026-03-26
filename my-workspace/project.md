@@ -42,7 +42,7 @@ Fontes: `package.json`, `nx.json`, `shell/project.json`.
 
 ### Orders (`domain:orders`)
 
-- `orders-data-access`
+- `orders-core`
 - `orders-ui-components`
 - `orders-util-validators`
 - `orders-feature-order-list`
@@ -50,7 +50,7 @@ Fontes: `package.json`, `nx.json`, `shell/project.json`.
 
 ### Users (`domain:users`)
 
-- `users-data-access`
+- `users-core`
 - `users-ui-components`
 - `users-util-validators`
 - `users-feature-auth`
@@ -58,7 +58,7 @@ Fontes: `package.json`, `nx.json`, `shell/project.json`.
 
 ### Catalog (`domain:catalog`)
 
-- `catalog-data-access`
+- `catalog-core`
 - `catalog-ui-components`
 - `catalog-util-validators`
 - `catalog-feature-browse`
@@ -69,6 +69,11 @@ Fontes: `package.json`, `nx.json`, `shell/project.json`.
 - `shared-ui`
 - `shared-store`
 - `shared-i18n`
+
+### Audit (`domain:audit`)
+
+- `audit-core`
+- `audit-feature-audit`
 - `shared-interfaces`
 - `shared-util-http`
 - `shared-util-auth`
@@ -83,11 +88,22 @@ Fontes: `package.json`, `nx.json`, `shell/project.json`.
 
 ### Convenção de tipos (tags)
 
-- `type:data-access`: acesso a dados/serviços/store
+- `type:core`: acesso a dados/serviços/store
 - `type:ui`: componentes visuais
 - `type:util`: validações e utilitários
 - `type:feature`: páginas/fluxos funcionais
 - `type:infra`: host e infraestrutura
+
+### Convencao de submodulos (alinhamento pos-reuniao)
+
+- Convencao oficial da camada de dominio: `core` (substitui o nome antigo `data-access`).
+- Tags Nx desta camada: `type:core` em todos os dominios.
+- Alias de importacao: `@my-workspace/<domain>/core`.
+- Nome de projeto Nx: `<domain>-core`.
+- Criar um projeto Nx (`project.json`, `tsconfig*`, `ng-package.json`) apenas quando o submodulo precisa de ciclo de build/test/lint independente.
+- Evitar boilerplate duplicado para pastas internas que funcionam apenas como organizacao de codigo.
+- Priorizar uma fronteira limpa por dominio e feature; promover para projeto Nx somente quando houver ganho real de isolamento.
+- Para features transversais reutilizaveis de auditoria, usar o dominio `audit` como modulo dedicado e manter `shared` agnostico de regra de negocio.
 
 ---
 
@@ -148,9 +164,9 @@ flowchart LR
 Arquivos:
 - `libs/orders/features/feature-order-list/src/lib/order-list.ts`
 - `libs/orders/features/feature-checkout/src/lib/checkout.ts`
-- `libs/orders/data-access/src/lib/orders.service.ts`
-- `libs/orders/data-access/src/lib/orders.store.ts`
-- `libs/orders/data-access/src/lib/orders.api.ts`
+- `libs/orders/core/src/lib/orders.service.ts`
+- `libs/orders/core/src/lib/orders.store.ts`
+- `libs/orders/core/src/lib/orders.api.ts`
 
 ### Users/Auth
 
@@ -159,14 +175,14 @@ Arquivos:
 
 Arquivos:
 - `libs/users/features/feature-auth/src/lib/login.ts`
-- `libs/users/data-access/src/lib/auth.service.ts`
+- `libs/users/core/src/lib/auth.service.ts`
 
 ### Catalog
 
 - `CatalogService` busca de `CatalogApi` e publica no `CatalogStore`.
 
 Arquivo:
-- `libs/catalog/data-access/src/lib/catalog.service.ts`
+- `libs/catalog/core/src/lib/catalog.service.ts`
 
 ### Features transversais
 
@@ -197,7 +213,7 @@ No root do workspace (`my-workspace`):
 Dica: para inspecionar targets de um projeto específico:
 
 - `npx nx show project shell --web`
-- `npx nx show project orders-data-access --web`
+- `npx nx show project orders-core --web`
 
 ---
 
@@ -205,7 +221,7 @@ Dica: para inspecionar targets de um projeto específico:
 
 ### Script curto (abertura - 40s)
 
-"A arquitetura é um monorepo Nx com Angular, onde o `shell` funciona como host de rotas e composição. Cada domínio (`orders`, `users`, `catalog`) está isolado em libs com camadas de `data-access`, `ui`, `util` e `feature`. Temos também features cross-domain (`dashboard`, `checkout-flow`, `onboarding`) para jornadas que atravessam domínios. Isso permite evolução modular, reuso e fronteiras claras dentro de um único repositório."
+"A arquitetura é um monorepo Nx com Angular, onde o `shell` funciona como host de rotas e composição. Cada domínio (`orders`, `users`, `catalog`) está isolado em libs com camadas de `core`, `ui`, `util` e `feature`. Temos também features cross-domain (`dashboard`, `checkout-flow`, `onboarding`) para jornadas que atravessam domínios. Isso permite evolução modular, reuso e fronteiras claras dentro de um único repositório."
 
 ### Perguntas prováveis + resposta sugerida
 
@@ -213,10 +229,10 @@ Dica: para inspecionar targets de um projeto específico:
   "É o app host. Ele não concentra regra de negócio; ele registra providers globais e mapeia rotas lazy para as libs de feature."
 
 - **Onde está a lógica de negócio?**  
-  "Principalmente em `libs/*/data-access` e nas features de cada domínio. UI e validações ficam separadas em `ui-components` e `util-validators`."
+  "Principalmente em `libs/*/core` e nas features de cada domínio. UI e validações ficam separadas em `ui-components` e `util-validators`."
 
 - **Como vocês evitam acoplamento?**  
-  "Com separação por domínio e tipos de lib (`data-access`, `ui`, `util`, `feature`) mais importação por aliases (`@my-workspace/*`) definidos no `tsconfig.base.json`."
+  "Com separação por domínio e tipos de lib (`core`, `ui`, `util`, `feature`) mais importação por aliases (`@my-workspace/*`) definidos no `tsconfig.base.json`."
 
 - **`/orders/checkout` e `/checkout-flow` são a mesma coisa?**  
   "Não. `/orders/checkout` é feature do domínio orders. `/checkout-flow` é uma feature transversal que compõe dados de múltiplos domínios."
@@ -228,7 +244,7 @@ Dica: para inspecionar targets de um projeto específico:
   "Usamos services por domínio com stores baseadas em signals. Em orders, há cache TTL e invalidação no create."
 
 - **Como escalar essa base para produção?**  
-  "Trocar APIs mock por HTTP real no `data-access`, manter contratos em `shared/interfaces`, e reforçar regras de dependência entre domínios conforme o produto cresce."
+  "Trocar APIs mock por HTTP real no `core`, manter contratos em `shared/interfaces`, e reforçar regras de dependência entre domínios conforme o produto cresce."
 
 ---
 
@@ -242,7 +258,7 @@ Dica: para inspecionar targets de um projeto específico:
 
 ### Próximos passos recomendados
 
-- Integrar `data-access` com APIs reais (HTTP + tratamento de erro).
+- Integrar `core` com APIs reais (HTTP + tratamento de erro).
 - Externalizar configuração por ambiente.
 - Definir regras de dependência Nx mais estritas por domínio.
 - Expandir suíte E2E cobrindo fluxos críticos.
@@ -268,4 +284,28 @@ Dica: para inspecionar targets de um projeto específico:
   - `libs/features/dashboard/src/lib/dashboard-page.ts`
   - `libs/features/checkout-flow/src/lib/checkout-page.ts`
   - `libs/features/user-onboarding/src/lib/onboarding-page.ts`
-  - `libs/orders/data-access/src/lib/orders.api.ts`
+  - `libs/orders/core/src/lib/orders.api.ts`
+
+---
+
+## 10. Evidencias da iteracao Audit
+
+### Mudancas entregues
+
+- Novo dominio `audit` com:
+  - `libs/audit/core`
+  - `libs/audit/features/feature-audit`
+- Nova rota: `/audit/:entityType/:entityId`.
+- Fluxo de concorrencia otimista com `ETag` / `If-Match` no modulo de audit.
+- Piloto de refatoracao em `catalog`:
+  - detalhe por id (`/catalog/detail/:id`)
+  - limpeza de arquivos de boilerplate nao utilizados em `catalog/core`.
+
+### Validacao executada
+
+- `npx nx run-many -t lint --projects=shell,catalog-core,catalog-feature-browse,catalog-feature-detail`
+- `npx nx run-many -t test --projects=shell,catalog-core,catalog-feature-browse,catalog-feature-detail`
+- `npx nx run-many -t lint --projects=audit-core,audit-feature-audit`
+- `npx nx run-many -t test --projects=audit-core,audit-feature-audit`
+
+Resultado: todos os comandos acima executaram com sucesso.

@@ -29,6 +29,10 @@ export default [
               onlyDependOnLibsWithTags: ['domain:catalog', 'domain:shared'],
             },
             {
+              sourceTag: 'domain:audit',
+              onlyDependOnLibsWithTags: ['domain:audit', 'domain:shared'],
+            },
+            {
               sourceTag: 'domain:shared',
               onlyDependOnLibsWithTags: ['domain:shared'],
             },
@@ -39,6 +43,7 @@ export default [
                 'domain:orders',
                 'domain:users',
                 'domain:catalog',
+                'domain:audit',
                 'domain:shared',
               ],
             },
@@ -46,16 +51,16 @@ export default [
               sourceTag: 'type:feature',
               onlyDependOnLibsWithTags: [
                 'type:feature',
-                'type:data-access',
+                'type:core',
                 'type:ui',
                 'type:util',
                 'domain:shared',
               ],
             },
             {
-              sourceTag: 'type:data-access',
+              sourceTag: 'type:core',
               onlyDependOnLibsWithTags: [
-                'type:data-access',
+                'type:core',
                 'type:util',
                 'domain:shared',
               ],
@@ -63,7 +68,7 @@ export default [
             {
               sourceTag: 'type:ui',
               onlyDependOnLibsWithTags: [
-                'type:data-access',
+                'type:core',
                 'type:ui',
                 'type:util',
                 'domain:shared',

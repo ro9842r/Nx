@@ -19,6 +19,13 @@ Os arquivos `task-01` ate `task-38` sao o roteiro operacional principal.
 - [x] B07 Consolidar evidencias finais no relatorio (secao 13 atualizada com comandos e resultados).
 - [x] B08 Rodar quality gate completo e fechar pendencias.
 
+## Adendo de convencao (pos-call)
+
+- Aplicar principio de "projeto Nx somente quando necessario" para reduzir boilerplate repetido em subpastas.
+- Manter organizacao por dominio e feature como prioridade; evitar criar projeto Nx para cada pasta interna sem necessidade de ciclo independente.
+- Quando houver requisito transversal de auditoria, concentrar em modulo dedicado (`domain:audit`) e evitar acoplamento de regra de negocio em `shared`.
+- Nomenclatura oficial da camada de dominio: `core` (substitui `data-access`) com tag `type:core`.
+
 ## 1) Checklist Sequencial de Execucao (1-2h por task)
 
 Este e o modo oficial de execucao desta POC. Execute estritamente de `S01` ate `S24`, sem pular etapas.
@@ -65,7 +72,7 @@ Formato de cada item:
 
 - **Duracao:** 1-2h
 - **Pre-requisito:** S03
-- **Passos:** criar `data-access`, `ui-components`, `util-validators`, `features` com `project.json`, `index.ts` e `src/lib`.
+- **Passos:** criar `core`, `ui-components`, `util-validators`, `features` com `project.json`, `index.ts` e `src/lib`.
 - **Validacao:** `nx show project <orders-project>`
 - **Aceite:** topologia completa do dominio.
 - **Saida esperada:** arvore `libs/orders/**`.
@@ -88,32 +95,32 @@ Formato de cada item:
 - **Aceite:** topologia completa do dominio.
 - **Saida esperada:** arvore `libs/catalog/**`.
 
-### S07 - Orders data-access minimo
+### S07 - Orders core minimo
 
 - **Duracao:** 1-2h
 - **Pre-requisito:** S06
 - **Passos:** criar `orders.service.ts`, `orders.store.ts`, `orders.api.ts`, `orders.models.ts`.
-- **Validacao:** `nx lint orders-data-access`
+- **Validacao:** `nx lint orders-core`
 - **Aceite:** compilacao e exports publicos corretos.
-- **Saida esperada:** data-access de `orders` operacional.
+- **Saida esperada:** core de `orders` operacional.
 
-### S08 - Users data-access minimo
+### S08 - Users core minimo
 
 - **Duracao:** 1-2h
 - **Pre-requisito:** S07
 - **Passos:** criar `auth.service.ts`, `auth.store.ts`, `user.models.ts`.
-- **Validacao:** `nx lint users-data-access`
+- **Validacao:** `nx lint users-core`
 - **Aceite:** compilacao e exports publicos corretos.
-- **Saida esperada:** data-access de `users` operacional.
+- **Saida esperada:** core de `users` operacional.
 
-### S09 - Catalog data-access minimo
+### S09 - Catalog core minimo
 
 - **Duracao:** 1-2h
 - **Pre-requisito:** S08
 - **Passos:** criar `catalog.service.ts`, `catalog.store.ts`, `catalog.api.ts`, `catalog.models.ts`.
-- **Validacao:** `nx lint catalog-data-access`
+- **Validacao:** `nx lint catalog-core`
 - **Aceite:** compilacao e exports publicos corretos.
-- **Saida esperada:** data-access de `catalog` operacional.
+- **Saida esperada:** core de `catalog` operacional.
 
 ### S10 - Orders ui-components e validators
 
@@ -260,9 +267,9 @@ Formato de cada item:
 - [ ] S04 Criar dominio `orders`
 - [ ] S05 Criar dominio `users`
 - [ ] S06 Criar dominio `catalog`
-- [ ] S07 Orders data-access minimo
-- [ ] S08 Users data-access minimo
-- [ ] S09 Catalog data-access minimo
+- [ ] S07 Orders core minimo
+- [ ] S08 Users core minimo
+- [ ] S09 Catalog core minimo
 - [ ] S10 Orders ui-components e validators
 - [ ] S11 Users ui-components e validators
 - [ ] S12 Catalog ui-components e validators
@@ -303,7 +310,7 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
 
 1. Confirmar convencao de nomes:
    - dominios: `orders`, `users`, `catalog`;
-   - subcamadas: `data-access`, `ui-components`, `util-validators`, `features`;
+   - subcamadas: `core`, `ui-components`, `util-validators`, `features`;
    - features: `feature-*`.
 2. Definir convencao de export publico (`src/index.ts`) para todas as libs.
 3. Confirmar aliases e path mapping coerentes por biblioteca.
@@ -337,7 +344,7 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
 1. Definir tags de dominio:
    - `domain:orders`, `domain:users`, `domain:catalog`, `domain:cross`, `domain:shared`.
 2. Definir tags de tipo:
-   - `type:feature`, `type:data-access`, `type:ui`, `type:util`, `type:infra`.
+   - `type:feature`, `type:core`, `type:ui`, `type:util`, `type:infra`.
 3. Aplicar tags em todos os projetos criados.
 
 **Comandos de validacao:**
@@ -399,7 +406,7 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
 **Passos tecnicos:**
 
 1. Criar para cada dominio:
-   - `data-access`;
+   - `core`;
    - `ui-components`;
    - `util-validators`;
    - `features`.
@@ -408,7 +415,7 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
    - `src/index.ts`;
    - pasta `src/lib`.
 3. Criar esqueletos minimos:
-   - services/stores/apis/models no `data-access`;
+   - services/stores/apis/models no `core`;
    - componentes de apresentacao no `ui-components`;
    - validadores no `util-validators`.
 
@@ -448,7 +455,7 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
    - componente standalone;
    - arquivo de rotas da feature.
 2. Centralizar na feature a orquestracao do caso de uso.
-3. Consumir `data-access` e `ui-components` do mesmo dominio.
+3. Consumir `core` e `ui-components` do mesmo dominio.
 
 **Comandos de validacao:**
 
@@ -538,19 +545,19 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
 
 **Escopo alvo:**
 
-- `libs/orders/data-access/**`
+- `libs/orders/core/**`
 - `libs/orders/ui-components/**`
 - `libs/orders/features/**`
 
 **Passos tecnicos:**
 
-1. Implementar store e facade/service no `data-access`.
+1. Implementar store e facade/service no `core`.
 2. Implementar componentes de visualizacao no `ui-components`.
-3. Implementar `feature-order-list` e `feature-checkout` conectadas ao data-access.
+3. Implementar `feature-order-list` e `feature-checkout` conectadas ao core.
 
 **Comandos de validacao:**
 
-- `nx lint orders-data-access`
+- `nx lint orders-core`
 - `nx lint orders-ui-components`
 - `nx lint orders-feature-order-list`
 
@@ -570,7 +577,7 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
 
 **Escopo alvo:**
 
-- `libs/users/data-access/**`
+- `libs/users/core/**`
 - `libs/users/ui-components/**`
 - `libs/users/features/**`
 
@@ -582,7 +589,7 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
 
 **Comandos de validacao:**
 
-- `nx lint users-data-access`
+- `nx lint users-core`
 - `nx lint users-feature-auth`
 - `nx lint users-feature-profile`
 
@@ -602,7 +609,7 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
 
 **Escopo alvo:**
 
-- `libs/catalog/data-access/**`
+- `libs/catalog/core/**`
 - `libs/catalog/ui-components/**`
 - `libs/catalog/features/**`
 
@@ -614,7 +621,7 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
 
 **Comandos de validacao:**
 
-- `nx lint catalog-data-access`
+- `nx lint catalog-core`
 - `nx lint catalog-feature-browse`
 - `nx lint catalog-feature-detail`
 
@@ -701,7 +708,7 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
 
 ### T5.1 - Testes unitarios baseline
 
-**Objetivo:** cobrir logica critica de data-access e validadores.
+**Objetivo:** cobrir logica critica de core e validadores.
 
 **Escopo alvo:**
 
@@ -710,7 +717,7 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
 
 **Passos tecnicos:**
 
-1. Criar testes unitarios para `orders`, `users`, `catalog` data-access.
+1. Criar testes unitarios para `orders`, `users`, `catalog` core.
 2. Testar validadores de util-validators.
 3. Medir tempo de execucao baseline.
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { input } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-import { Order } from '@my-workspace/orders/data-access';
+import { Order } from '@my-workspace/orders-core';
 import { OrderStatusBadge } from './order-status-badge';
 
 @Component({

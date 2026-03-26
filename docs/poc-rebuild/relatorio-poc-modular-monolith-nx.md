@@ -55,7 +55,7 @@ O stakeholder quer olhar o repositorio e entender rapidamente:
 
 Cada modulo de dominio deve conter:
 
-- `data-access` (estado, models, api/client, service);
+- `core` (estado, models, api/client, service);
 - `ui-components` (componentes de apresentacao do dominio);
 - `util-validators` (regras utilitarias do dominio);
 - `features/feature-*` (casos de uso, com rota e componente da feature).
@@ -114,7 +114,7 @@ my-workspace/
 
 Detalhamento interno alvo por dominio:
 
-- `data-access`: models, store, service, api.
+- `core`: models, store, service, api.
 - `ui-components`: componentes reutilizaveis do dominio.
 - `util-validators`: validadores/regras utilitarias.
 - `features`: cada `feature-*` representa um use-case com rota/componente.
@@ -135,7 +135,7 @@ Exemplo de estrategia de tags:
   - `domain:shared`
 - Tipo:
   - `type:feature`
-  - `type:data-access`
+  - `type:core`
   - `type:ui`
   - `type:util`
   - `type:infra`
@@ -143,11 +143,11 @@ Exemplo de estrategia de tags:
 ## 5.2 Regras de dependencia (visao geral)
 
 - `type:feature` pode depender de:
-  - `type:data-access`
+  - `type:core`
   - `type:ui`
   - `type:util`
   - `domain:shared`
-- `type:data-access` pode depender de:
+- `type:core` pode depender de:
   - `type:util`
   - `domain:shared`
 - `type:ui` nao deve depender de `type:feature`.
@@ -217,7 +217,7 @@ Exemplo de estrategia de tags:
 
 ## 7.2 Testes unitarios (prioridade media)
 
-- Cobrir stores/services de `data-access`.
+- Cobrir stores/services de `core`.
 - Cobrir validadores em `util-validators`.
 
 ## 7.3 E2E (prioridade media)
@@ -252,7 +252,7 @@ A POC sera considerada pronta para apresentacao quando:
 
 ## Risco A - Voltar a organizar por camada tecnica no topo
 
-- **Sinal de erro:** `libs/features`, `libs/data-access`, `libs/ui` como raiz principal de tudo.
+- **Sinal de erro:** `libs/features`, `libs/core`, `libs/ui` como raiz principal de tudo.
 - **Mitigacao:** manter raiz por dominio e somente subcamadas dentro de cada dominio.
 
 ## Risco B - Shared virar deposito de tudo
@@ -330,7 +330,7 @@ Para execucao passo a passo, consultar:
 
 ### 13.2 Evidencia objetiva de enforcement
 
-- Violacao controlada aplicada em `libs/orders/features/feature-order-list/src/lib/order-list.ts` com import de `@my-workspace/users/data-access`.
+- Violacao controlada aplicada em `libs/orders/features/feature-order-list/src/lib/order-list.ts` com import de `@my-workspace/users/core`.
 - Comando executado: `npx nx lint orders-feature-order-list`.
 - Resultado esperado confirmado: erro `@nx/enforce-module-boundaries` para `domain:orders`:
   - `A project tagged with "domain:orders" can only depend on libs tagged with "domain:orders", "domain:shared"`.
