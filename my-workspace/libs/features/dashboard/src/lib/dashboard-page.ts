@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { inject } from '@angular/core';
-import { OrdersService } from '@my-workspace/orders/core';
-import { AuthService } from '@my-workspace/users/core';
-import { CatalogService } from '@my-workspace/catalog/core';
+import { OrdersService } from '@my-workspace/orders';
+import { AuthService } from '@my-workspace/users';
+import { CatalogService } from '@my-workspace/catalog';
 import { t } from '@my-workspace/shared/i18n';
 
 @Component({

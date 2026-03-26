@@ -1,0 +1,7 @@
+{
+  "name": "catalog",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/catalog/src",
+  "projectType": "library",
+  "tags": ["domain:catalog", "type:domain"]
+}

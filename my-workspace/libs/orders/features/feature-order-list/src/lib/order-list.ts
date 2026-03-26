@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { inject } from '@angular/core';
-import { OrderCard } from '@my-workspace/orders/ui-components';
-import { OrdersService } from '@my-workspace/orders/core';
+import { OrderCard } from '../../../../ui-components/src/lib/order-card';
+import { OrdersService } from '@my-workspace/orders';
 
 @Component({
   selector: 'lib-order-list',

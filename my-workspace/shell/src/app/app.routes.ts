@@ -12,14 +12,14 @@ export const appRoutes: Route[] = [
       {
         path: 'list',
         loadComponent: () =>
-          import('@my-workspace/orders/features/feature-order-list').then(
+          import('@my-workspace/orders/features/order-list').then(
             (m) => m.OrderList
           ),
       },
       {
         path: 'checkout',
         loadComponent: () =>
-          import('@my-workspace/orders/features/feature-checkout').then(
+          import('@my-workspace/orders/features/checkout').then(
             (m) => m.Checkout
           ),
       },
@@ -31,14 +31,14 @@ export const appRoutes: Route[] = [
       {
         path: 'auth',
         loadComponent: () =>
-          import('@my-workspace/users/features/feature-auth').then(
+          import('@my-workspace/users/features/auth').then(
             (m) => m.Login
           ),
       },
       {
         path: 'profile',
         loadComponent: () =>
-          import('@my-workspace/users/features/feature-profile').then(
+          import('@my-workspace/users/features/profile').then(
             (m) => m.Profile
           ),
       },
@@ -50,14 +50,14 @@ export const appRoutes: Route[] = [
       {
         path: 'browse',
         loadComponent: () =>
-          import('@my-workspace/catalog/features/feature-browse').then(
+          import('@my-workspace/catalog/features/browse').then(
             (m) => m.Browse
           ),
       },
       {
         path: 'detail/:id',
         loadComponent: () =>
-          import('@my-workspace/catalog/features/feature-detail').then(
+          import('@my-workspace/catalog/features/detail').then(
             (m) => m.Detail
           ),
       },
@@ -74,14 +74,14 @@ export const appRoutes: Route[] = [
       {
         path: 'list',
         loadComponent: () =>
-          import('@my-workspace/country-strategy/features/feature-list').then(
+          import('@my-workspace/country-strategy/features/list').then(
             (m) => m.CountryStrategyList
           ),
       },
       {
         path: 'detail/:id',
         loadComponent: () =>
-          import('@my-workspace/country-strategy/features/feature-detail').then(
+          import('@my-workspace/country-strategy/features/detail').then(
             (m) => m.CountryStrategyDetail
           ),
       },
@@ -109,7 +109,7 @@ export const appRoutes: Route[] = [
   {
     path: 'audit/:entityType/:entityId',
     loadComponent: () =>
-      import('@my-workspace/audit/features/feature-audit').then(
+      import('@my-workspace/audit/features/audit-page').then(
         (m) => m.AuditPage
       ),
   },

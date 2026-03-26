@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from '@my-workspace/users/core';
-import { isStrongPassword, isValidEmail } from '@my-workspace/users/util-validators';
+import { AuthService } from '@my-workspace/users';
+import { isStrongPassword, isValidEmail } from '@my-workspace/users/utils';
 
 @Component({
   selector: 'lib-login',

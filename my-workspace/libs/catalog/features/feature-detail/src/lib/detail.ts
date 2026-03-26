@@ -3,8 +3,8 @@ import { inject } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { RouterLink } from '@angular/router';
-import { CatalogService } from '@my-workspace/catalog/core';
-import { isValidPrice } from '@my-workspace/catalog/util-validators';
+import { CatalogService } from '@my-workspace/catalog';
+import { isValidPrice } from '@my-workspace/catalog/utils';
 import { AuditEntityType } from '@my-workspace/shared/interfaces';
 
 @Component({

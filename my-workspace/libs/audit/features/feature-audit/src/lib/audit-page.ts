@@ -6,7 +6,7 @@ import {
   AuditEntityType,
   AuditRequestContext,
   AuditService,
-} from '@my-workspace/audit/core';
+} from '@my-workspace/audit';
 
 @Component({
   selector: 'lib-audit-page',

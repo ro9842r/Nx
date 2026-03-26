@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
-import { OrdersService } from '@my-workspace/orders/core';
-import { isValidOrderTotal } from '@my-workspace/orders/util-validators';
+import { OrdersService } from '@my-workspace/orders';
+import { isValidOrderTotal } from '@my-workspace/orders/utils';
 
 @Component({
   selector: 'lib-checkout',

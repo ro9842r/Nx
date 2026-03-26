@@ -1,0 +1,7 @@
+{
+  "name": "country-strategy",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/country-strategy/src",
+  "projectType": "library",
+  "tags": ["domain:country-strategy", "type:domain"]
+}

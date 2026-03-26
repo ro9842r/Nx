@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { input } from '@angular/core';
-import { OrderStatus } from '@my-workspace/orders/core';
+import { OrderStatus } from '@my-workspace/orders';
 
 @Component({
   selector: 'lib-order-status-badge',

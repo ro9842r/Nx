@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CatalogService } from '@my-workspace/catalog/core';
-import { ProductCard } from '@my-workspace/catalog/ui-components';
+import { CatalogService } from '@my-workspace/catalog';
+import { ProductCard } from '../../../../ui-components/src/lib/product-card';
 
 @Component({
   selector: 'lib-browse',

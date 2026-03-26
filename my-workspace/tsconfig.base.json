@@ -15,62 +15,62 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@my-workspace/orders/core": [
-        "libs/orders/core/src/index.ts"
+      "@my-workspace/orders": [
+        "libs/orders/src/index.ts"
       ],
-      "@my-workspace/orders/ui-components": [
-        "libs/orders/ui-components/src/index.ts"
+      "@my-workspace/orders/ui": [
+        "libs/orders/src/lib/ui/index.ts"
       ],
-      "@my-workspace/orders/util-validators": [
-        "libs/orders/util-validators/src/index.ts"
+      "@my-workspace/orders/utils": [
+        "libs/orders/src/lib/utils/index.ts"
       ],
-      "@my-workspace/orders/features/feature-order-list": [
-        "libs/orders/features/feature-order-list/src/index.ts"
+      "@my-workspace/orders/features/order-list": [
+        "libs/orders/src/lib/features/order-list/index.ts"
       ],
-      "@my-workspace/orders/features/feature-checkout": [
-        "libs/orders/features/feature-checkout/src/index.ts"
+      "@my-workspace/orders/features/checkout": [
+        "libs/orders/src/lib/features/checkout/index.ts"
       ],
-      "@my-workspace/users/core": [
-        "libs/users/core/src/index.ts"
+      "@my-workspace/users": [
+        "libs/users/src/index.ts"
       ],
-      "@my-workspace/users/ui-components": [
-        "libs/users/ui-components/src/index.ts"
+      "@my-workspace/users/ui": [
+        "libs/users/src/lib/ui/index.ts"
       ],
-      "@my-workspace/users/util-validators": [
-        "libs/users/util-validators/src/index.ts"
+      "@my-workspace/users/utils": [
+        "libs/users/src/lib/utils/index.ts"
       ],
-      "@my-workspace/users/features/feature-profile": [
-        "libs/users/features/feature-profile/src/index.ts"
+      "@my-workspace/users/features/profile": [
+        "libs/users/src/lib/features/profile/index.ts"
       ],
-      "@my-workspace/users/features/feature-auth": [
-        "libs/users/features/feature-auth/src/index.ts"
+      "@my-workspace/users/features/auth": [
+        "libs/users/src/lib/features/auth/index.ts"
       ],
-      "@my-workspace/catalog/core": [
-        "libs/catalog/core/src/index.ts"
+      "@my-workspace/catalog": [
+        "libs/catalog/src/index.ts"
       ],
-      "@my-workspace/catalog/ui-components": [
-        "libs/catalog/ui-components/src/index.ts"
+      "@my-workspace/catalog/ui": [
+        "libs/catalog/src/lib/ui/index.ts"
       ],
-      "@my-workspace/catalog/util-validators": [
-        "libs/catalog/util-validators/src/index.ts"
+      "@my-workspace/catalog/utils": [
+        "libs/catalog/src/lib/utils/index.ts"
       ],
-      "@my-workspace/catalog/features/feature-browse": [
-        "libs/catalog/features/feature-browse/src/index.ts"
+      "@my-workspace/catalog/features/browse": [
+        "libs/catalog/src/lib/features/browse/index.ts"
       ],
-      "@my-workspace/catalog/features/feature-detail": [
-        "libs/catalog/features/feature-detail/src/index.ts"
+      "@my-workspace/catalog/features/detail": [
+        "libs/catalog/src/lib/features/detail/index.ts"
       ],
-      "@my-workspace/audit/core": [
-        "libs/audit/core/src/index.ts"
+      "@my-workspace/audit": [
+        "libs/audit/src/index.ts"
       ],
-      "@my-workspace/audit/features/feature-audit": [
-        "libs/audit/features/feature-audit/src/index.ts"
+      "@my-workspace/audit/features/audit-page": [
+        "libs/audit/src/lib/features/audit-page/index.ts"
       ],
-      "@my-workspace/country-strategy/features/feature-detail": [
-        "libs/country-strategy/features/feature-detail/src/index.ts"
+      "@my-workspace/country-strategy/features/detail": [
+        "libs/country-strategy/src/lib/features/detail/index.ts"
       ],
-      "@my-workspace/country-strategy/features/feature-list": [
-        "libs/country-strategy/features/feature-list/src/index.ts"
+      "@my-workspace/country-strategy/features/list": [
+        "libs/country-strategy/src/lib/features/list/index.ts"
       ],
       "@my-workspace/shared/ui": ["libs/shared/ui/src/index.ts"],
       "@my-workspace/shared/util-http": ["libs/shared/util-http/src/index.ts"],
