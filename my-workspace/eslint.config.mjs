@@ -70,8 +70,18 @@ export default [
               ],
             },
             {
+              sourceTag: 'type:util',
+              onlyDependOnLibsWithTags: ['type:util', 'domain:shared'],
+            },
+            {
               sourceTag: 'type:infra',
-              onlyDependOnLibsWithTags: ['*'],
+              onlyDependOnLibsWithTags: [
+                'type:infra',
+                'type:feature',
+                'type:ui',
+                'type:util',
+                'domain:shared',
+              ],
             },
             {
               sourceTag: 'npm:public',

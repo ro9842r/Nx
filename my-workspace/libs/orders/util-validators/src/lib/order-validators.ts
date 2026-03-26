@@ -1,4 +1,4 @@
-import { OrderStatus } from '@my-workspace/orders/data-access';
+type OrderStatus = 'pending' | 'paid' | 'shipped';
 
 const VALID_STATUSES: OrderStatus[] = ['pending', 'paid', 'shipped'];
 

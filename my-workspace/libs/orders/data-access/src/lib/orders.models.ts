@@ -6,3 +6,9 @@ export interface Order {
   total: number;
   status: OrderStatus;
 }
+
+export interface NewOrderInput {
+  customerName: string;
+  total: number;
+  status?: OrderStatus;
+}

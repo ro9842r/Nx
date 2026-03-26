@@ -102,9 +102,8 @@ my-workspace/
 ├── nx.json
 ├── .eslintrc.json
 ├── tsconfig.base.json
-├── apps/
-│   ├── shell/
-│   └── shell-e2e/
+├── shell/
+├── shell-e2e/
 └── libs/
     ├── orders/
     ├── users/
@@ -280,12 +279,12 @@ A POC sera considerada pronta para apresentacao quando:
 
 ## 10) Checklist de execucao (operacional)
 
-- [ ] Estrutura de pastas criada conforme alvo.
-- [ ] Todas as libs com `project.json` e tags coerentes.
-- [ ] Regras de dependencia aplicadas e validadas.
-- [ ] Features minimas por dominio implementadas.
-- [ ] Shared/cross-dominio segregados.
-- [ ] E2E e unit baseline executados.
+- [x] Estrutura de pastas criada conforme alvo.
+- [x] Todas as libs com `project.json` e tags coerentes.
+- [x] Regras de dependencia aplicadas e validadas.
+- [x] Features minimas por dominio implementadas.
+- [x] Shared/cross-dominio segregados.
+- [x] E2E e unit baseline executados.
 - [ ] Roteiro de demo validado internamente.
 
 ## 10.1) Modo oficial de execucao (micro-tasks 1-2h)
@@ -306,11 +305,11 @@ Documento de referencia operacional:
 ## 11) Checklist de prontidao para apresentacao
 
 - [ ] Consigo explicar em 2 minutos a logica modulo -> feature -> use-case.
-- [ ] Consigo mostrar no grafo que os modulos estao isolados.
-- [ ] Consigo demonstrar que import invalido quebra regra.
-- [ ] Consigo demonstrar 2-3 fluxos de negocio end-to-end.
-- [ ] Consigo justificar escolhas de teste (Playwright + baseline unit).
-- [ ] Consigo diferenciar claramente fase 1 (modularidade) e fase 2 (cache/global state).
+- [x] Consigo mostrar no grafo que os modulos estao isolados.
+- [x] Consigo demonstrar que import invalido quebra regra.
+- [x] Consigo demonstrar 2-3 fluxos de negocio end-to-end.
+- [x] Consigo justificar escolhas de teste (Playwright + baseline unit).
+- [x] Consigo diferenciar claramente fase 1 (modularidade) e fase 2 (cache/global state).
 
 ---
 
@@ -319,4 +318,51 @@ Documento de referencia operacional:
 Para execucao passo a passo, consultar:
 
 - `docs/poc-rebuild/tasks-tecnicas-poc-modular-monolith-nx.md`
+
+---
+
+## 13) Status apos backlog de ajustes (execucao real)
+
+### 13.1 Governanca Nx no shell
+
+- Bypass removido de `shell/src/app/app.routes.ts` (sem `eslint-disable` de boundaries).
+- `nx lint shell` executado com sucesso.
+
+### 13.2 Evidencia objetiva de enforcement
+
+- Violacao controlada aplicada em `libs/orders/features/feature-order-list/src/lib/order-list.ts` com import de `@my-workspace/users/data-access`.
+- Comando executado: `npx nx lint orders-feature-order-list`.
+- Resultado esperado confirmado: erro `@nx/enforce-module-boundaries` para `domain:orders`:
+  - `A project tagged with "domain:orders" can only depend on libs tagged with "domain:orders", "domain:shared"`.
+- Alteracao revertida apos validacao.
+
+### 13.3 Estrutura real alinhada com documentacao
+
+- Documentacao atualizada para refletir a arvore real com `shell/` e `shell-e2e/` na raiz do workspace (sem `apps/`).
+
+### 13.4 E2E minimo prometido
+
+- Suite de `shell-e2e` atualizada para cobrir:
+  - `login -> dashboard`;
+  - `browse -> detail`;
+  - `order list -> checkout`.
+- Fluxos ajustados para navegar por interacoes de UI (links), evitando `goto` direto para as telas-alvo.
+- Execucao validada com `nx e2e shell-e2e --excludeTaskDependencies` (suite verde).
+
+### 13.5 Fase 2 (NgRx + Signals + invalidacao)
+
+- Implementacao minima aplicada no dominio `orders`:
+  - `@ngrx/signals` adicionado ao workspace;
+  - `OrdersStore` migrado para `signalState` + `patchState` (NgRx Signals);
+  - cache com `loadedAt` + `isStale` + `shouldRefetch(maxAgeMs)`;
+  - mutacao `create()` invalida cache e faz refresh imediato.
+- Checkout atualizado para demonstrar fluxo de invalidacao e refresh na UI.
+
+### 13.6 Quality gate final (B08)
+
+- Lint global executado com sucesso: `npx nx run-many -t lint --all`.
+- Unit baseline executada com sucesso: `npx nx run-many -t test --all`.
+- Grafo Nx exportado para evidencia: `npx nx graph --file="../docs/poc-rebuild/nx-graph.html"`.
+- E2E executado com sucesso via `npx nx e2e shell-e2e --excludeTaskDependencies`.
+- Observacao operacional: `npx nx e2e shell-e2e` sem `--excludeTaskDependencies` pode falhar quando a porta `4200` ja esta ocupada por outro `shell:serve`.
 

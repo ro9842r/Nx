@@ -1,12 +1,69 @@
-<h1>Nx Modular Monolith POC</h1>
-<nav>
-  <a routerLink="/orders/list">Orders List</a> |
-  <a routerLink="/orders/checkout">Orders Checkout</a> |
-  <a routerLink="/users/auth">Users Auth</a> |
-  <a routerLink="/users/profile">Users Profile</a> |
-  <a routerLink="/catalog/browse">Catalog Browse</a> |
-  <a routerLink="/catalog/detail">Catalog Detail</a> |
-  <a routerLink="/dashboard">Dashboard</a> |
-  <a routerLink="/checkout-flow">Checkout Flow</a> |
-  <a routerLink="/onboarding">Onboarding</a>
-</nav>
+<main class="min-h-screen bg-slate-100 p-4 sm:p-6">
+  <section class="mx-auto w-full max-w-6xl space-y-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+    <header class="space-y-2">
+      <h1 class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+        Nx Modular Monolith POC
+      </h1>
+      <p class="text-sm text-slate-600">
+        Navegue entre os domínios para validar os componentes com Tailwind.
+      </p>
+    </header>
+
+    <nav class="flex flex-wrap gap-2">
+      <a
+        routerLink="/orders/list"
+        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
+      >
+        Orders List
+      </a>
+      <a
+        routerLink="/orders/checkout"
+        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
+      >
+        Orders Checkout
+      </a>
+      <a
+        routerLink="/users/auth"
+        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
+      >
+        Users Auth
+      </a>
+      <a
+        routerLink="/users/profile"
+        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
+      >
+        Users Profile
+      </a>
+      <a
+        routerLink="/catalog/browse"
+        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
+      >
+        Catalog Browse
+      </a>
+      <a
+        routerLink="/catalog/detail"
+        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
+      >
+        Catalog Detail
+      </a>
+      <a
+        routerLink="/dashboard"
+        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
+      >
+        Dashboard
+      </a>
+      <a
+        routerLink="/checkout-flow"
+        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
+      >
+        Checkout Flow
+      </a>
+      <a
+        routerLink="/onboarding"
+        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
+      >
+        Onboarding
+      </a>
+    </nav>
+  </section>
+</main>

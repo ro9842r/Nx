@@ -2,7 +2,8 @@
   "name": "@my-workspace/orders/data-access",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/core": "^21.2.0"
+    "@angular/core": "^21.2.0",
+    "@ngrx/signals": "^21.1.0"
   },
   "sideEffects": false
 }

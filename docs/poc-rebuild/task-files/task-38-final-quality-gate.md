@@ -5,10 +5,10 @@ Executar validacao final antes da apresentacao.
 
 ## Comandos
 ```bash
-npx nx lint
-npx nx graph
+npx nx run-many -t lint --all
+npx nx graph --file="../docs/poc-rebuild/nx-graph.html"
 npx nx run-many -t test --all
-npx nx e2e shell-e2e
+npx nx e2e shell-e2e --excludeTaskDependencies
 ```
 
 ## Descricao detalhada

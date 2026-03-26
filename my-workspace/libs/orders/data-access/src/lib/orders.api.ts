@@ -1,4 +1,4 @@
-import { Order } from './orders.models';
+import { NewOrderInput, Order } from './orders.models';
 
 const ORDERS: Order[] = [
   { id: 'ord-1001', customerName: 'Alice', total: 120, status: 'pending' },
@@ -8,5 +8,16 @@ const ORDERS: Order[] = [
 export class OrdersApi {
   list(): Order[] {
     return [...ORDERS];
+  }
+
+  create(input: NewOrderInput): Order {
+    const next: Order = {
+      id: `ord-${1000 + ORDERS.length + 1}`,
+      customerName: input.customerName,
+      total: input.total,
+      status: input.status ?? 'pending',
+    };
+    ORDERS.push(next);
+    return next;
   }
 }

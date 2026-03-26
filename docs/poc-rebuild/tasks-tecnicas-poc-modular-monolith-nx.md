@@ -8,6 +8,17 @@ Para execucao do zero em formato **1 task por MD**, use:
 
 Os arquivos `task-01` ate `task-38` sao o roteiro operacional principal.
 
+## Status apos backlog de ajustes
+
+- [x] B01 Remover bypass de boundaries no `shell/src/app/app.routes.ts`.
+- [x] B02 Registrar evidencia de bloqueio de import invalido por `@nx/enforce-module-boundaries`.
+- [x] B03 Alinhar docs com estrutura real (`shell/`, `shell-e2e/`, `libs/`).
+- [x] B04 Refinar constraints (`type:util` explicito e `type:infra` mais restrito).
+- [x] B05 Completar E2E: `login -> dashboard`, `browse -> detail`, `order list -> checkout`.
+- [x] B06 Aplicar fase minima de cache com NgRx Signals + invalidacao em `orders`.
+- [x] B07 Consolidar evidencias finais no relatorio (secao 13 atualizada com comandos e resultados).
+- [x] B08 Rodar quality gate completo e fechar pendencias.
+
 ## 1) Checklist Sequencial de Execucao (1-2h por task)
 
 Este e o modo oficial de execucao desta POC. Execute estritamente de `S01` ate `S24`, sem pular etapas.
@@ -27,7 +38,7 @@ Formato de cada item:
 
 - **Duracao:** 1h
 - **Pre-requisito:** nenhum
-- **Passos:** validar estrutura raiz (`apps/`, `libs/`, configs Nx/TS/ESLint), mapear projetos atuais.
+- **Passos:** validar estrutura raiz (`shell/`, `shell-e2e/`, `libs/`, configs Nx/TS/ESLint), mapear projetos atuais.
 - **Validacao:** `nx show projects`
 - **Aceite:** inventario inicial registrado.
 - **Saida esperada:** lista de projetos e lacunas.
@@ -162,7 +173,7 @@ Formato de cada item:
 
 - **Duracao:** 1h
 - **Pre-requisito:** S15
-- **Passos:** conectar lazy routes das features no `apps/shell/src/app/app.routes.ts`.
+- **Passos:** conectar lazy routes das features no `shell/src/app/app.routes.ts`.
 - **Validacao:** `nx serve shell`
 - **Aceite:** navegacao por dominios funcionando.
 - **Saida esperada:** roteamento consolidado.
@@ -189,7 +200,7 @@ Formato de cada item:
 
 - **Duracao:** 1-2h
 - **Pre-requisito:** S18
-- **Passos:** adicionar tags de `domain:*` e `type:*` em apps/libs.
+- **Passos:** adicionar tags de `domain:*` e `type:*` em shell/libs.
 - **Validacao:** `nx show project <project-name>`
 - **Aceite:** 100% dos projetos tagueados.
 - **Saida esperada:** taxonomia Nx aplicada.
@@ -235,7 +246,7 @@ Formato de cada item:
 - **Duracao:** 1h
 - **Pre-requisito:** S23
 - **Passos:** executar checklist final de arquitetura, qualidade e roteiro de pitch.
-- **Validacao:** `nx lint && nx graph && nx e2e shell-e2e`
+- **Validacao:** `nx run-many -t lint --all && nx graph --file=../docs/poc-rebuild/nx-graph.html && nx run-many -t test --all && nx e2e shell-e2e --excludeTaskDependencies`
 - **Aceite:** POC pronta para apresentacao ao stakeholder.
 - **Saida esperada:** pacote final de demo.
 
@@ -282,7 +293,8 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
 
 **Escopo alvo:**
 
-- `apps/`
+- `shell/`
+- `shell-e2e/`
 - `libs/`
 - `nx.json`
 - `tsconfig.base.json`
@@ -350,9 +362,9 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
 
 **Escopo alvo:**
 
-- `apps/shell/src/main.ts`
-- `apps/shell/src/app/app.config.ts`
-- `apps/shell/src/app/app.routes.ts`
+- `shell/src/main.ts`
+- `shell/src/app/app.config.ts`
+- `shell/src/app/app.routes.ts`
 
 **Passos tecnicos:**
 
@@ -722,7 +734,7 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
 
 **Escopo alvo:**
 
-- `apps/shell-e2e/**`
+- `shell-e2e/**`
 
 **Passos tecnicos:**
 
@@ -765,9 +777,10 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
 **Comandos de validacao:**
 
 - `nx lint`
+- `nx run-many -t lint --all`
 - `nx run-many -t test --all`
-- `nx e2e shell-e2e`
-- `nx graph`
+- `nx e2e shell-e2e --excludeTaskDependencies`
+- `nx graph --file=../docs/poc-rebuild/nx-graph.html`
 
 **Criterio de aceite:**
 
@@ -842,25 +855,25 @@ As secoes abaixo permanecem como referencia detalhada por fase e aprofundamento 
 
 ## 2) Checklist de qualidade final (go/no-go)
 
-- [ ] Estrutura de `libs/` orientada por negocio.
-- [ ] Features organizadas por use-case (vertical slice).
-- [ ] Tags aplicadas em todos os projetos.
-- [ ] Constraints Nx configuradas e ativas.
-- [ ] Shared sem regra de negocio de dominio.
-- [ ] Cross-dominio apenas orquestrando.
-- [ ] Lint global sem erros bloqueantes.
-- [ ] Unit tests baseline verdes.
-- [ ] E2E smoke verde.
+- [x] Estrutura de `libs/` orientada por negocio.
+- [x] Features organizadas por use-case (vertical slice).
+- [x] Tags aplicadas em todos os projetos.
+- [x] Constraints Nx configuradas e ativas.
+- [x] Shared sem regra de negocio de dominio.
+- [x] Cross-dominio apenas orquestrando.
+- [x] Lint global sem erros bloqueantes.
+- [x] Unit tests baseline verdes.
+- [x] E2E smoke verde.
 - [ ] Roteiro de demo validado.
 
 ---
 
 ## 3) Checklist de riscos e mitigacoes
 
-- [ ] Risco de acoplamento entre dominios mitigado por constraints.
+- [x] Risco de acoplamento entre dominios mitigado por constraints.
 - [ ] Risco de "shared deposito" mitigado por revisao de ownership.
 - [ ] Risco de foco excessivo em funcionalidade mitigado por roteiro de pitch.
-- [ ] Risco de regressao arquitetural mitigado por quality gate.
+- [x] Risco de regressao arquitetural mitigado por quality gate.
 - [ ] Risco de ambiguidade de implementacao mitigado por tasks com DoD.
 
 ---

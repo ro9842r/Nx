@@ -5,13 +5,13 @@ Gerar evidencia arquitetural para stakeholder.
 
 ## Comandos
 ```bash
-npx nx graph
-npx nx lint
+npx nx graph --file="../docs/poc-rebuild/nx-graph.html"
+npx nx run-many -t lint --all
 ```
 
 ## Descricao detalhada
-- `nx graph` mostra topologia real de dependencias.
-- `nx lint` confirma enforcement de boundaries.
+- `nx graph --file` gera artefato versionavel da topologia real de dependencias.
+- `nx run-many -t lint --all` confirma enforcement de boundaries em todo o workspace.
 
 ## Resultado esperado
 - Grafo sem acoplamentos indevidos.
