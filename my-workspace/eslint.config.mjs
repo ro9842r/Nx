@@ -13,7 +13,8 @@ export default [
       '@nx/enforce-module-boundaries': [
         'error',
         {
-          enforceBuildableLibDependency: true,
+          enforceBuildableLibDependency: false,
+          allowCircularSelfDependency: true,
           allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$'],
           depConstraints: [
             {
@@ -60,8 +61,14 @@ export default [
               onlyDependOnLibsWithTags: [
                 'type:feature',
                 'type:core',
+                'type:domain',
                 'type:ui',
                 'type:util',
+                'domain:orders',
+                'domain:users',
+                'domain:catalog',
+                'domain:audit',
+                'domain:country-strategy',
                 'domain:shared',
               ],
             },
@@ -93,6 +100,14 @@ export default [
                 'type:feature',
                 'type:ui',
                 'type:util',
+                'type:core',
+                'type:domain',
+                'domain:orders',
+                'domain:users',
+                'domain:catalog',
+                'domain:audit',
+                'domain:country-strategy',
+                'domain:cross',
                 'domain:shared',
               ],
             },

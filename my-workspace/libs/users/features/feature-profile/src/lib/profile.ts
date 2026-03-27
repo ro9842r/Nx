@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { inject } from '@angular/core';
-import { Avatar } from '../../../../ui-components/src/lib/avatar';
-import { AuthService } from '@my-workspace/users';
+import { Avatar } from '@my-workspace/users/ui/avatar';
+import { AuthService } from '@my-workspace/users/core';
 
 @Component({
   selector: 'lib-profile',

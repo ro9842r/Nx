@@ -1,16 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-
-type CountryStrategySummary = {
-  id: string;
-  title: string;
-  owner: string;
-};
-
-const COUNTRY_STRATEGIES: CountryStrategySummary[] = [
-  { id: '64', title: 'Brazil Growth', owner: 'Ops Team' },
-  { id: '65', title: 'Chile Expansion', owner: 'Sales Team' },
-];
+import { CountryStrategyService } from '@my-workspace/country-strategy/core';
 
 @Component({
   selector: 'lib-country-strategy-list',
@@ -18,6 +8,11 @@ const COUNTRY_STRATEGIES: CountryStrategySummary[] = [
   templateUrl: './country-strategy-list.html',
   styleUrl: './country-strategy-list.scss',
 })
-export class CountryStrategyList {
-  readonly strategies = COUNTRY_STRATEGIES;
+export class CountryStrategyList implements OnInit {
+  private readonly service = inject(CountryStrategyService);
+  readonly strategies = this.service.store.strategies;
+
+  ngOnInit(): void {
+    this.service.load();
+  }
 }

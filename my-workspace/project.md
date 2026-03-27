@@ -38,50 +38,21 @@ Fontes: `package.json`, `nx.json`, `shell/project.json`.
 - `nx.json`: convenções de targets, cache e plugins Nx
 - `tsconfig.base.json`: aliases `@my-workspace/*`
 
-### Projetos por domínio
+### Projetos Nx atuais
 
-### Orders (`domain:orders`)
+### Domínios (`domain:*`)
 
-- `orders-core`
-- `orders-ui-components`
-- `orders-util-validators`
-- `orders-feature-order-list`
-- `orders-feature-checkout`
-
-### Users (`domain:users`)
-
-- `users-core`
-- `users-ui-components`
-- `users-util-validators`
-- `users-feature-auth`
-- `users-feature-profile`
-
-### Catalog (`domain:catalog`)
-
-- `catalog-core`
-- `catalog-ui-components`
-- `catalog-util-validators`
-- `catalog-feature-browse`
-- `catalog-feature-detail`
-
-### Country Strategy (`domain:country-strategy`)
-
-- `country-strategy-feature-list`
-- `country-strategy-feature-detail`
+- `orders`
+- `users`
+- `catalog`
+- `country-strategy`
+- `audit`
 
 ### Shared (`domain:shared`)
 
 - `shared-ui`
 - `shared-store`
 - `shared-i18n`
-
-### Audit (`domain:audit`)
-
-- `audit-core`
-- `audit-feature-audit`
-- `shared-interfaces`
-- `shared-util-http`
-- `shared-util-auth`
 
 ### Cross-domain (`domain:cross`)
 
@@ -90,6 +61,12 @@ Fontes: `package.json`, `nx.json`, `shell/project.json`.
 - `features-user-onboarding`
 - `shell` (`type:infra`, `npm:public`)
 - `shell-e2e` (`type:infra`)
+
+### Observação importante sobre a estrutura
+
+- Cada domínio é um projeto Nx no nível da lib (`libs/<domain>/project.json`).
+- Pastas internas como `core`, `features`, `ui-components` e `util-validators` são organização de código (não projetos Nx separados).
+- Isso reduz duplicação de `project.json`/`tsconfig`/`ng-package` em subpastas internas.
 
 ### Convenção de tipos (tags)
 
@@ -104,8 +81,8 @@ Fontes: `package.json`, `nx.json`, `shell/project.json`.
 - Convencao oficial da camada de dominio: `core` (substitui o nome antigo `data-access`).
 - Tags Nx desta camada: `type:core` em todos os dominios.
 - Alias de importacao: `@my-workspace/<domain>/core`.
-- Nome de projeto Nx: `<domain>-core`.
-- Criar um projeto Nx (`project.json`, `tsconfig*`, `ng-package.json`) apenas quando o submodulo precisa de ciclo de build/test/lint independente.
+- Nome de projeto Nx no estado atual: `<domain>` (um por domínio).
+- Criar projeto Nx dedicado apenas quando houver ciclo independente real de build/test/lint.
 - Evitar boilerplate duplicado para pastas internas que funcionam apenas como organizacao de codigo.
 - Priorizar uma fronteira limpa por dominio e feature; promover para projeto Nx somente quando houver ganho real de isolamento.
 - Para features transversais reutilizaveis de auditoria, usar o dominio `audit` como modulo dedicado e manter `shared` agnostico de regra de negocio.
@@ -145,14 +122,14 @@ flowchart LR
 
 ### Como o shell conecta tudo
 
-- `/orders/list` -> `@my-workspace/orders/features/feature-order-list`
-- `/orders/checkout` -> `@my-workspace/orders/features/feature-checkout`
-- `/users/auth` -> `@my-workspace/users/features/feature-auth`
-- `/users/profile` -> `@my-workspace/users/features/feature-profile`
-- `/catalog/browse` -> `@my-workspace/catalog/features/feature-browse`
-- `/catalog/detail/:id` -> `@my-workspace/catalog/features/feature-detail`
-- `/country-strategy/list` -> `@my-workspace/country-strategy/features/feature-list`
-- `/country-strategy/detail/:id` -> `@my-workspace/country-strategy/features/feature-detail`
+- `/orders/list` -> `@my-workspace/orders/features/order-list`
+- `/orders/checkout` -> `@my-workspace/orders/features/checkout`
+- `/users/auth` -> `@my-workspace/users/features/auth`
+- `/users/profile` -> `@my-workspace/users/features/profile`
+- `/catalog/browse` -> `@my-workspace/catalog/features/browse`
+- `/catalog/detail/:id` -> `@my-workspace/catalog/features/detail`
+- `/country-strategy/list` -> `@my-workspace/country-strategy/features/list`
+- `/country-strategy/detail/:id` -> `@my-workspace/country-strategy/features/detail`
 - `/dashboard` -> `@my-workspace/features/dashboard`
 - `/checkout-flow` -> `@my-workspace/features/checkout-flow`
 - `/onboarding` -> `@my-workspace/features/user-onboarding`
@@ -163,7 +140,7 @@ flowchart LR
 
 ### Orders
 
-- `OrderList` injeta `OrdersService` e chama `load()` ao iniciar.
+- `OrderList` injeta `OrdersService` via alias `@my-workspace/orders/core` e chama `load()` ao iniciar.
 - `Checkout` usa validador (`isValidOrderTotal`) e chama `create()` para pedido demo.
 - `OrdersService` usa cache TTL (`30s`) e invalida cache em mutação.
 - `OrdersApi` hoje usa dados em memória (`const ORDERS`), sem backend real.
@@ -177,7 +154,7 @@ Arquivos:
 
 ### Users/Auth
 
-- `Login` valida email/senha (`users/util-validators`) e chama `AuthService.login(email)`.
+- `Login` valida email/senha (`users/util-validators`) e chama `AuthService.login(email)` via `@my-workspace/users/core`.
 - `AuthService` preenche usuário em store local (mock).
 
 Arquivos:
@@ -186,7 +163,7 @@ Arquivos:
 
 ### Catalog
 
-- `CatalogService` busca de `CatalogApi` e publica no `CatalogStore`.
+- `CatalogService` busca de `CatalogApi` e publica no `CatalogStore` (consumo via `@my-workspace/catalog/core`).
 
 Arquivo:
 - `libs/catalog/core/src/lib/catalog.service.ts`
@@ -304,23 +281,22 @@ Dica: para inspecionar targets de um projeto específico:
   - `libs/audit/features/feature-audit`
 - Nova rota: `/audit/:entityType/:entityId`.
 - Fluxo de concorrencia otimista com `ETag` / `If-Match` no modulo de audit.
-- Padronizacao de aliases de `core` para `@my-workspace/<domain>/core`.
-- Limpeza de boilerplate redundante em `orders`, `users` e `catalog`:
-  - remocao de componentes placeholder gerados e specs correspondentes
-  - adicao de specs minimos por projeto para manter `nx test` verde
+- Padronizacao de aliases de `core` para `@my-workspace/<domain>/core` aplicada nos fluxos principais.
+- Limpeza de boilerplate redundante em subpastas internas de dominios (sem `project.json` por feature interna).
 - Novo fluxo demonstravel de `country-strategy`:
   - lista (`/country-strategy/list`)
   - detalhe (`/country-strategy/detail/:id`)
-  - projeto Nx dedicado: `country-strategy-feature-list`
+  - projeto Nx de dominio: `country-strategy`
 - Reforco de boundaries:
   - nova regra `domain:country-strategy` em `eslint.config.mjs`
-  - tags dos projetos de country strategy ajustadas para `domain:country-strategy`
+  - tags do projeto `country-strategy` ajustadas para `domain:country-strategy`
 - Grafo arquitetural atualizado para apresentacao: `static/dep-graph.html`.
+- Simplificacao de aliases de features para apontar direto para `libs/<domain>/features/*/src/index.ts` (menos indirection).
 
 ### Validacao executada
 
 - `npx nx graph --file="static/dep-graph.html"`
-- `npx nx run-many -t lint --projects=shell,orders-feature-order-list,orders-feature-checkout,orders-ui-components,orders-util-validators,users-feature-auth,users-feature-profile,users-ui-components,catalog-feature-browse,catalog-feature-detail,catalog-ui-components,features-dashboard,features-checkout-flow,features-user-onboarding,audit-feature-audit,country-strategy-feature-detail,country-strategy-feature-list`
-- `npx nx run-many -t test --projects=shell,orders-feature-order-list,orders-feature-checkout,orders-ui-components,orders-util-validators,users-feature-auth,users-feature-profile,users-ui-components,catalog-feature-browse,catalog-feature-detail,catalog-ui-components,features-dashboard,features-checkout-flow,features-user-onboarding,audit-feature-audit,country-strategy-feature-detail,country-strategy-feature-list`
+- `npx nx run-many -t lint --projects=shell,orders,users,catalog,country-strategy,audit,features-dashboard,features-checkout-flow,features-user-onboarding`
+- `npx nx test shell`
 
-Resultado: comandos de lint e test executaram com sucesso para os projetos impactados.
+Resultado: `lint` executou com sucesso para todos os projetos impactados; `test` do `shell` executou com sucesso.

@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { AuditEntityType } from '@my-workspace/shared/interfaces';
+import { CountryStrategyService } from '@my-workspace/country-strategy/core';
 
 @Component({
   selector: 'lib-country-strategy-detail',
@@ -8,12 +9,17 @@ import { AuditEntityType } from '@my-workspace/shared/interfaces';
   templateUrl: './country-strategy-detail.html',
   styleUrl: './country-strategy-detail.scss',
 })
-export class CountryStrategyDetail {
+export class CountryStrategyDetail implements OnInit {
   private readonly route = inject(ActivatedRoute);
+  private readonly service = inject(CountryStrategyService);
+
   readonly countryStrategyId = this.route.snapshot.paramMap.get('id') ?? '';
   readonly auditEntityType = AuditEntityType.CountryStrategy;
+  readonly strategy = this.service.store.selected;
 
-  get hasCountryStrategyId(): boolean {
-    return this.countryStrategyId.trim().length > 0;
+  ngOnInit(): void {
+    if (this.countryStrategyId) {
+      this.service.loadById(this.countryStrategyId);
+    }
   }
 }

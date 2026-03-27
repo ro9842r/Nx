@@ -8,7 +8,7 @@
     </header>
 
     <ul class="space-y-3">
-      @for (strategy of strategies; track strategy.id) {
+      @for (strategy of strategies(); track strategy.id) {
         <li class="rounded-xl border border-slate-200 p-3">
           <p class="text-sm font-medium text-slate-900">{{ strategy.title }}</p>
           <p class="text-xs text-slate-600">Owner: {{ strategy.owner }}</p>
