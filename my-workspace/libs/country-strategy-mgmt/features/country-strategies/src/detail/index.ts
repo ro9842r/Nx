@@ -1,1 +1,1 @@
-export * from './country-strategy-detail';
+export * from './country-strategy-detail.component';

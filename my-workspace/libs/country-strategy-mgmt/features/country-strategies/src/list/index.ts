@@ -1,1 +1,1 @@
-export * from './country-strategy-list';
+export * from './country-strategy-list.component';

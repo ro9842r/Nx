@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
-import { CountryStrategyList } from './country-strategy-list';
+import { CountryStrategyList } from './country-strategy-list.component';
 
 describe('CountryStrategyList', () => {
   let component: CountryStrategyList;
