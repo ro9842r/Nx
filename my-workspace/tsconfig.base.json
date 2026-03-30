@@ -14,106 +14,27 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
-      "@my-workspace/orders": [
-        "libs/orders/src/index.ts"
+      "@oper/shared-types": ["libs/_shared/types/src/index.ts"],
+      "@oper/shared-utils": ["libs/_shared/utils/src/index.ts"],
+      "@oper/shared-constants": ["libs/_shared/constants/src/index.ts"],
+
+      "@oper/cs-members": ["libs/country-strategy-mgmt/members/src/index.ts"],
+
+      "@oper/cs": [
+        "libs/country-strategy-mgmt/features/country-strategies/src/index.ts"
       ],
-      "@my-workspace/orders/core": [
-        "libs/orders/core/src/index.ts"
+      "@oper/cs-cen": [
+        "libs/country-strategy-mgmt/features/country-engagement-note/src/index.ts"
       ],
-      "@my-workspace/orders/ui": [
-        "libs/orders/src/lib/ui/index.ts"
+      "@oper/rm": [
+        "libs/country-strategy-mgmt/features/result-matrix/src/index.ts"
       ],
-      "@my-workspace/orders/ui/order-card": [
-        "libs/orders/ui-components/src/lib/order-card.ts"
+
+      "@oper/cpd": [
+        "libs/portfolio-supervision/features/cpd/src/index.ts"
       ],
-      "@my-workspace/orders/utils": [
-        "libs/orders/src/lib/utils/index.ts"
-      ],
-      "@my-workspace/orders/features/order-list": [
-        "libs/orders/features/feature-order-list/src/index.ts"
-      ],
-      "@my-workspace/orders/features/checkout": [
-        "libs/orders/features/feature-checkout/src/index.ts"
-      ],
-      "@my-workspace/users": [
-        "libs/users/src/index.ts"
-      ],
-      "@my-workspace/users/core": [
-        "libs/users/core/src/index.ts"
-      ],
-      "@my-workspace/users/ui": [
-        "libs/users/src/lib/ui/index.ts"
-      ],
-      "@my-workspace/users/ui/avatar": [
-        "libs/users/ui-components/src/lib/avatar.ts"
-      ],
-      "@my-workspace/users/utils": [
-        "libs/users/src/lib/utils/index.ts"
-      ],
-      "@my-workspace/users/features/profile": [
-        "libs/users/features/feature-profile/src/index.ts"
-      ],
-      "@my-workspace/users/features/auth": [
-        "libs/users/features/feature-auth/src/index.ts"
-      ],
-      "@my-workspace/catalog": [
-        "libs/catalog/src/index.ts"
-      ],
-      "@my-workspace/catalog/core": [
-        "libs/catalog/core/src/index.ts"
-      ],
-      "@my-workspace/catalog/ui": [
-        "libs/catalog/src/lib/ui/index.ts"
-      ],
-      "@my-workspace/catalog/ui/product-card": [
-        "libs/catalog/ui-components/src/lib/product-card.ts"
-      ],
-      "@my-workspace/catalog/utils": [
-        "libs/catalog/src/lib/utils/index.ts"
-      ],
-      "@my-workspace/catalog/features/browse": [
-        "libs/catalog/features/feature-browse/src/index.ts"
-      ],
-      "@my-workspace/catalog/features/detail": [
-        "libs/catalog/features/feature-detail/src/index.ts"
-      ],
-      "@my-workspace/audit": [
-        "libs/audit/src/index.ts"
-      ],
-      "@my-workspace/audit/core": [
-        "libs/audit/core/src/index.ts"
-      ],
-      "@my-workspace/audit/features/audit-page": [
-        "libs/audit/src/lib/features/audit-page/index.ts"
-      ],
-      "@my-workspace/country-strategy": [
-        "libs/country-strategy/src/index.ts"
-      ],
-      "@my-workspace/country-strategy/core": [
-        "libs/country-strategy/core/src/index.ts"
-      ],
-      "@my-workspace/country-strategy/features/detail": [
-        "libs/country-strategy/features/feature-detail/src/index.ts"
-      ],
-      "@my-workspace/country-strategy/features/list": [
-        "libs/country-strategy/features/feature-list/src/index.ts"
-      ],
-      "@my-workspace/shared/ui": ["libs/shared/ui/src/index.ts"],
-      "@my-workspace/shared/util-http": ["libs/shared/util-http/src/index.ts"],
-      "@my-workspace/shared/util-auth": ["libs/shared/util-auth/src/index.ts"],
-      "@my-workspace/shared/interfaces": [
-        "libs/shared/interfaces/src/index.ts"
-      ],
-      "@my-workspace/shared/store": ["libs/shared/store/src/index.ts"],
-      "@my-workspace/shared/i18n": ["libs/shared/i18n/src/index.ts"],
-      "@my-workspace/features/checkout-flow": [
-        "libs/features/checkout-flow/src/index.ts"
-      ],
-      "@my-workspace/features/dashboard": [
-        "libs/features/dashboard/src/index.ts"
-      ],
-      "@my-workspace/features/user-onboarding": [
-        "libs/features/user-onboarding/src/index.ts"
+      "@oper/ps-cen": [
+        "libs/portfolio-supervision/features/country-engagement-note/src/index.ts"
       ]
     }
   },

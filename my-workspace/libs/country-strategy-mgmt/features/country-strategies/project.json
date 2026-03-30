@@ -1,0 +1,30 @@
+{
+  "name": "cs",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/country-strategy-mgmt/features/country-strategies/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["type:feature", "scope:csmgmt"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/country-strategy-mgmt/features/country-strategies/ng-package.json",
+        "tsConfig": "libs/country-strategy-mgmt/features/country-strategies/tsconfig.lib.json"
+      },
+      "configurations": {
+        "production": {},
+        "development": {}
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/angular:unit-test",
+      "options": {}
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

@@ -4,47 +4,14 @@
   >
     <header class="space-y-2">
       <h1 class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-        Nx Modular Monolith POC
+        az-swa-oper-strategy
       </h1>
+      <p class="text-sm text-slate-600">
+        Domain-driven Angular workspace — Country Strategy Management &amp; Portfolio Supervision
+      </p>
     </header>
 
     <nav class="flex flex-wrap gap-2">
-      <a
-        routerLink="/orders/list"
-        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
-      >
-        Orders List
-      </a>
-      <a
-        routerLink="/orders/checkout"
-        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
-      >
-        Orders Checkout
-      </a>
-      <a
-        routerLink="/users/auth"
-        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
-      >
-        Users Auth
-      </a>
-      <a
-        routerLink="/users/profile"
-        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
-      >
-        Users Profile
-      </a>
-      <a
-        routerLink="/catalog/browse"
-        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
-      >
-        Catalog Browse
-      </a>
-      <a
-        routerLink="/catalog/detail/prd-100"
-        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
-      >
-        Catalog Detail
-      </a>
       <a
         [routerLink]="countryStrategyListLink"
         class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
@@ -56,30 +23,6 @@
         class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
       >
         Country Strategy Detail
-      </a>
-      <a
-        routerLink="/dashboard"
-        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
-      >
-        Dashboard
-      </a>
-      <a
-        routerLink="/checkout-flow"
-        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
-      >
-        Checkout Flow
-      </a>
-      <a
-        routerLink="/onboarding"
-        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
-      >
-        Onboarding
-      </a>
-      <a
-        [routerLink]="auditCountryStrategyLink"
-        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
-      >
-        Audit Country Strategy
       </a>
     </nav>
   </section>

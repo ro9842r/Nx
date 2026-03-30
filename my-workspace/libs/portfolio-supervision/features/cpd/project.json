@@ -1,0 +1,30 @@
+{
+  "name": "cpd",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/portfolio-supervision/features/cpd/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["type:feature", "scope:ps"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/portfolio-supervision/features/cpd/ng-package.json",
+        "tsConfig": "libs/portfolio-supervision/features/cpd/tsconfig.lib.json"
+      },
+      "configurations": {
+        "production": {},
+        "development": {}
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/angular:unit-test",
+      "options": {}
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

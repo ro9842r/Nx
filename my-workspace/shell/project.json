@@ -5,9 +5,7 @@
   "prefix": "app",
   "sourceRoot": "shell/src",
   "tags": [
-    "npm:public",
-    "domain:cross",
-    "type:infra"
+    "type:app"
   ],
   "targets": {
     "build": {

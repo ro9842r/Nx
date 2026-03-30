@@ -1,0 +1,239 @@
+Them [0:08]: i don't know what do you think
+Them [1:10]: if you want i can share because i want to discuss something before gustavo joins
+Them [1:17]: this is a decision that we have to take based on the structure that we want to build
+Them [1:22]: i found multiple example about this
+Them [1:24]: structure
+Them [1:30]: and this is literally what we are expecting to build
+Them [1:33]: and it's very similar to what you already have rodrigo
+Them [1:36]: but we have some details
+Them [1:43]: so for example in here they have the condoic application sorry
+Them [1:51]: i don't know to be honest what it's about i was just checking like the configuration and everything of course we have application level here
+Them [2:04]: so we of course have test we have i18n or internationalization the serp and a lot of things related to the bills also
+Them [2:21]: for an app it makes sense of course but then it's like the other thing that we were talking about last time when we go to lives if you see here it's everything with angular 21
+Them [2:34]: and i find it really good example so for example if you go to articles or core they have almost the same as the infrastructure that you show last time very similar
+Them [2:48]: uh but they have some extra things for example they have forms and http client we call it a data access and literally we had this here so i think there is not a problem
+Them [3:01]: and then if you see they have forms and let me check which one was the other one this is core and this is what they have as i think a share
+Them [3:42]: so in our case we have a share one because they have vi components core and i don't remember which one was the other one i think was another branch but the thing is like they have that separated in our case we have it combined in the shirt i think makes more sense but in this one it's the it's the actual thing that we want to discuss right that we have data access and what we were discussing with gustavo is we will have a features and use cases right so everything that it's in myself uh i said insiste gustavo here no not yet
+Them [3:42]: right
+Them [3:48]: can you hear me guys
+Rodrigo [3:49]: yeah
+Them [3:51]: okay
+Them [3:59]: i don't know if it is just okay i don't know if it is me direct but i hear rodrigo a bit far from there
+Them [4:00]: microphone
+Them [4:07]: eh si también me pasa escucha te escuchamos un poco y bajo rodrigo
+Them [4:08]: pero no
+Them [4:12]: sí muchachos ya a bit better
+Them [4:21]: so we have a so in our case we will have another layer here that will be feature use cases
+Them [4:27]: in data access that's how i see it you will show us rodrigo i think that will be also very nice
+Them [5:02]: but we will have also utils or another folder right what is the important thing that we need to define and this is the really important thing every time that we access uh folder here it's a sub library so if you see we have a project as you have it each one can have its own test each one has a name and you will access for example in this case like add the libraries articles data access
+Them [5:04]: and that will be the library
+Them [5:06]: right for this one
+Them [5:10]: uh let me check the other one
+Them [5:18]: this is what i'm not sure about if we will have
+Them [5:37]: like a library for each feature because in here here is describing uh library for each feature so if you come here then you if you want to access to the bios that are for article feature edit this will be its own library
+Them [5:40]: because it has an schema and everything
+Them [5:49]: right and it's exposing uh the src that it's in here the index so if you come here it will access this part
+Them [6:06]: and in here we will have a day index right why we need to decide on this the main and that's why i wanted to check it before with you rodrigo because this is a decision that we have to make based on our use case
+Them [6:31]: uh i understand that in a data access in a feature we have a library and for the other ones we also have because the idea on each library or in javascript i think you know that every build that we generate when we do an import in the app it's important the complete library we see that okay in a fight we just import one single element
+Them [6:48]: but in reality when we generate the build it's important to complete build right i don't know derek if you are familiar with the tree shaking uh concept i'm for sure um know that rodrigo knows about it so for this case this makes sense because in here
+Them [6:59]: what we will have we will have just a service we will have just models so we are not rendering anything related to template uh to other thing right
+Them [7:08]: to build like for example the ui we are just building logic in this cases services models so if you import this you are just important this part
+Them [7:10]: but in feature
+Them [7:13]: that's why i was saying like uh
+Them [7:30]: i don't know it makes sense to have a complete library for it because in one case that i saw uh i even have the use cases in the features and they create sweet libraries for each one so for example in here if you go to feature article feature article edit and feature article list
+Them [7:33]: you will see that it's a sub library for it
+Them [7:47]: uh and then it's normal it's going to just component and everything is in here but why they do it the idea behind creating a complete library on a feature is because these things
+Them [8:04]: are built to scale so a team of for example uh three members will be in charge of this so they can have independence in all the type configuration and how they import things and whatever right
+Them [8:26]: but in our case i think we'll be just the trigger or the four of us working on that so i don't know if makes sense creep uh project or a sub library for each part and probably we can just create it as a feature level and then in the feature we will have the folder in here we will have all the features and we'll just do an import what is the big difference between that
+Them [8:45]: um
+Rodrigo [8:45]: talk to you with you because giving your team size uh it's more for ethical to keep a single victory library there are the mains that are e to small country yeah exactly
+Rodrigo [9:00]: so what will be the big difference will be this uh so for example we will have opper that's the name of the repo for now we will have cs and then inside cs or like this cs sorry
+Rodrigo [9:05]: and then we will have data access
+Rodrigo [9:09]: for this one totally makes sense for example cs uh
+Rodrigo [9:11]: cs
+Rodrigo [9:14]: service
+Them [9:19]: n
+Them [9:23]: in the other one will be just
+Them [9:26]: uh feature
+Them [9:32]: and in the feature we will import everything else for example feature uh create
+Them [9:33]: uh
+Them [9:38]: edit
+Them [9:40]: list
+Them [9:45]: what is the difference if we create a sub library we will have something like this
+Them [9:50]: create
+Them [9:55]: and then the other one's edit and list
+Them [10:04]: so that's the biggest difference and for this one even doesn't make sense or it's not a big difference
+Them [10:19]: because of course we are importing all the dependencies but we know that the application we have all these dependencies at the end so we shaking doesn't make sense in this case independency uh i think we know that we will import everything into our application so also doesn't make sense
+Them [10:24]: so i don't know how bad it is to create a supply brief for each one
+Them [10:50]: in here and in here uh i mean i like this one and i like this one also but this one will have a lot of boilerplate that we don't need and this one of course uh the only thing that will be is this library will be in charge of importing the other things so my opinion is let or that's how i see it gustavo and on rodrigo also we will share his poc
+Them [10:53]: but in my opinion i said this way
+Them [10:56]: um not this one
+Them [11:55]: i know that uh in the idea where everything should be like okay sub library for this so library for this but at the end we'll have a lot of things uh yeah we are a team of tree so it's like this is for like when you're scaling for a team of 20 plus or 30 plus something like that and you want independence between each feature right but in our case i don't see it that much valid so but yeah we'll discuss it and that's the decision that we have to make i think we are we agree what we want as an instructor and you will show it rodrigo and i think it will be very similar to the thing that i'm showing now but the library part if the one that we actually need to decide so yeah like the floor is yours you can take use jars you can share now rodrigo but i think that will be one thing that we need to decide at the end after you present yeah i completely agree
+Them [12:07]: on the extra tree and for our curry andiscope endoteen size and i like that i like that i like this um gotta i share if you
+Rodrigo [12:55]: see my screen
+Them [13:00]: hello yeah we can say it now alright
+Them [13:10]: let's talk about let me show you the new searcher for the poc
+Them [13:14]: um
+Rodrigo [13:21]: uh as you can see you're using
+Rodrigo [13:34]: that extruded here at the root saying rehab the main rodrigo just one thing uh the icons look very small so i don't know if you can do the same yeah sorry sorry sorry
+Rodrigo [13:35]: uh
+Rodrigo [13:43]: because i
+Them [13:43]: think the code is not important for this one i think the structure will be more relevant so if you can
+Them [13:50]: yeah so mean alright
+Them [13:53]: can you do one more
+Rodrigo [13:55]: more alright
+Them [13:56]: please yes
+Rodrigo [14:05]: yeah that
+Them [14:05]: looks better
+Them [14:07]: it's better
+Them [14:07]: alright
+Rodrigo [14:21]: and i remember this poc and you can see under the light we have all the main domains
+Rodrigo [14:24]: we have orders
+Rodrigo [14:31]: uh we have a users and i chained uh things here
+Rodrigo [14:35]: and now we have a new excretory here
+Rodrigo [14:38]: and uh
+Rodrigo [14:48]: and for example inside a quarry uh
+Rodrigo [14:52]: we have a service here officer fc here
+Rodrigo [14:55]: uh but i know this is not important here
+Rodrigo [15:01]: uh i think this is a good tree
+Rodrigo [15:06]: but
+Rodrigo [15:18]: i think this is a good example to show how eat the main keeps it's a logical late first answer inside for example uh discore
+Rodrigo [15:27]: the very big for me uh order score uh we have to services uh
+Rodrigo [15:34]: we have to service this and mottos and store
+Rodrigo [15:53]: and everything related um data and business logic and inside your orders features we have the ui parts like the r east and checkout and the separation that makes this is a good example uh you guys
+Rodrigo [16:00]: and but do you have a question about that uh
+Rodrigo [16:05]: i know if you like this new composition
+Rodrigo [16:10]: hello
+Them [17:38]: uh yes in my case i think it's good i mean the only thing that i would like to improve for the final part um rodrigo it's like a we if we can improve a bit the boilerplate files for the supplies why because i think most of them are just repeating and we can just inheritate them uh i know that the nx has something to do it and for example if we know that all the features will uh have something similar we can just uh set one in the in a main component let's say not component where in the main folder and we can just import it to use all that configuration for the sub libraries um for example for the ts config and everything and we just override it if it's necessary for that sub library uh that's because if you open uh can you open uh let's see ats config of this one or tx config live json or spec
+Rodrigo [17:38]: yeah i know the next sports inference through the project dot json stands property so you can define a base configuration for all future library and let it extend it
+Rodrigo [17:53]: yeah
+Them [17:53]: i mean
+Rodrigo [17:53]: i can also come being that with acoustal antigenerator to scaffold new futures automatically with the share setup
+Rodrigo [17:57]: and for example same line rules task config
+Rodrigo [18:04]: and huge options so we don't repeat files by no window
+Them [18:21]: yeah i know that but i mean gustavo mentioned for what i'm saying it's for monte to have it as a ready for to show one example and i think yeah i think you already have a feel right that way
+Them [18:30]: uh let me see because uh can you go to the uh for example outdit library
+Them [18:34]: i want to say something there
+Them [18:40]: can you open the ts config here or the ts live
+Them [19:00]: yeah this is what i mean if probably if you open another ts config json will be literally the same right so we can just specify that will be inheritating the one that it's on the yet let's open for example the catalog one if you have a ts config there
+Them [19:10]: yeah the next one the other one
+Them [19:14]: because the other one is the lip yeah
+Rodrigo [20:08]: exactly if you see here are literally the same so instead of uh making this like a in each sub library we can just define it in one place and and and have it just importing right and i think that will make it even more ready let's say to show with to let's say to the department because they will for sure ask why we have a lot of repetition of this files right so we can come and say okay in this case we have repeated all these files because we literally use it to specify one specific linkedin rule or compile it rule that we need for this specific suit library but if you see these other ones here is just the project json and the ng packet let's say
+Rodrigo [20:39]: the other ones are just coming from this because or probably they will ask why the package json here you know so we need to explain uh because i'm i'm pretty sure that they will ask all these questions so if for monday we can even improve their south folder and this sub or boilerplate in i think it will we'll look even better i think because the structure uh i think i agree i already like it but we have to improve this thing
+Rodrigo [20:41]: okay
+Rodrigo [20:48]: yeah
+Rodrigo [21:00]: center light is configs before monday and the poc loop machine more police re
+Rodrigo [21:15]: all the extra trade here just to manage chains can i do this and does a repo and a chain paint a lot
+Rodrigo [21:27]: and do you have another opinion of the organization what do you think about that
+Them [21:41]: just another projection that probably i can have is like i know that we have the shell in the route right
+Them [21:46]: yeah
+Them [22:18]: so usually an ex - her if we will have multiple labs we can just create the apps folder right why i'm bringing this and that's why i want to include gustavo here because i don't know if in the same repo we will be building more application if we use it as a mono repo gustavo what do you think about that for example we will have counter strategy here but tomorrow we'll be another application so if uh but yeah that i want to know gustavo
+Them [22:22]: and the idea is that
+Them [22:25]: country is our first module
+Them [22:40]: country study management is our first module but for tomorrow maybe we're going to have a monitoring for example module or suburb
+Them [22:42]: vision
+Them [22:46]: like xact so that's why
+Them [23:23]: yeah so that tour is what i was thinking so another improvement uh rodrigo for monday i think can be having the apps folder uh just to have multiple uh applications because rodrigo mentioned if we continue in building under this i was completely sure that we were going to have more application and are of course we're not going to live on just only in one shell right because we will have separated uh federation models so i think it's also uh one thing that we can improve
+Them [23:47]: para perform that uh gustavo i have another question i i know that you have a the concept of uh features and use cases but i was investigating a lot also and i think rodrigo uh did it a lot and i have i have i haven't seen one example
+Them [24:05]: where they use use cases and feature as the way that way you sit in the backend it's just by feature and i saw also an architecture uh an architecture book of angular for vertical slides examples
+Them [24:17]: because en i was also checking with ai right white and the reason what they don't use it is because um how they explain is like for us is the components
+Them [24:39]: ehh what we call use cases i'm not saying that that's correct but the equivalent its components and the features are the views so that's why there is no if we put like a concept of use cases components and also the other integrations are not bullied anymore
+Them [25:05]: so that yeah i think that i got your point but maybe i don't know but my idea is for example in country strategy we have like the concept of encounter story in management as module we have the concept of country strategy tomorrow we're going to have the concept of country engagement note
+Them [25:07]: and that
+Them [25:13]: counter strategy country engagement node is composed by many actions
+Them [25:20]: one is to list one is to register one is to approve and stuff like that
+Them [25:29]: so is that possible to do something similar in angular i want to compose all the actions that affect a single entity
+Them [25:32]: yes i get the point
+Them [25:45]: yeah and the idea by the main entity that is what we call in backend feature we have the feature that is called country strategy
+Them [25:53]: and that is composed by not only use cases but by events as well
+Rodrigo [25:59]: yes absolutely angler supports that machan very well
+Rodrigo [26:19]: you can group o actions that that's a single entity like leaders to register and move inside one domain a library such as for example contrary uh anguilled with nodes and stuff like that and yeah this is completely impossible
+Rodrigo [26:22]: okay
+Them [26:29]: what for example in this country strategy
+Them [26:37]: you can you just expand please expand the features folder
+Them [27:00]: okay my question is right now we have two actions for country strategy one is list country strategy and the other one is created two different things i think in angular you're gonna have two different components for that but tomorrow we're gonna add country strategy sorry country engagement node where that is gonna be located
+Them [27:04]: at the same level as the folder feature
+Them [27:09]: we're gonna have all the actions under features
+Rodrigo [27:15]: okay we're gonna have
+Them [27:15]: a single folder per entity
+Them [27:17]: that's
+Rodrigo [27:17]: a great question
+Rodrigo [27:36]: yeah we will keep a single feature folder as i hit domain and under it will place all the actions related to that entity like petri list richard detail future resistant and so on
+Rodrigo [27:52]: and that keeps the triture consistent and easy to navigate it one domain one core and one fixture folder grouping all ui actions and um
+Them [27:52]: can i share my screen a little bit
+Them [28:11]: yes can i share my screen a little bit just to show you something i want to also understand how do you see the contra - engagement note uh gustavo because how you define it in the backend we'll define it also in the front end
+Them [28:14]: you see my button
+Them [28:16]: yeah we can see it now
+Them [28:17]: okay
+Them [28:27]: this is the structure we have we have like the infrastructure stuff this is this is this is following the clean architecture like layers
+Them [28:31]: it is like taking the reference it's not pure
+Them [28:45]: uh clean architecture casculan architecture at least has the infrastructure layer then we have our domain layer and the other stuff will be like
+Them [29:18]: and the application layer but that is and the presentation as well but this is like trying to get the reference from clinical character and we have these for like separation of concerns but the idea is that every time we have to navigate by the features we support in backend we need to go to the folder features and we have our like main features here what are the main features of your country strategy managing okay we manage country strategies
+Them [29:22]: and we managed countries working members as well
+Them [29:29]: so what do you do with this features well i can implement this use cases
+Them [29:45]: what is the use case ajc case is something that is that is related to an action executed by user in a specific context so i can create a country strategy
+Them [30:06]: this is these are all the files impacted in this action this is like a vertical slice architecture architectural style if i need to for example tomorrow hey oswaldo hey derek do you need to make an adjustment into the crease use case we have for country strategy you need to go here
+Them [30:27]: not anything else at the most cases there are going to be like for example more deepest changes that you need to go to a specific infrastructure but the most of the time you're going to go here and make your change because this is all the files that compose the use case
+Them [30:35]: we have the same for all the use cases we have for country strategy the same for country members
+Them [30:39]: tomorrow we're going to have
+Them [30:42]: the country engagement node
+Them [30:46]: and we're going to have
+Them [30:48]: use cases
+Them [30:53]: for what for create for update for all these cases we're going to support
+Them [31:04]: that is a little bit the idea i group all the actions and let's say use cases by the main entity or feature
+Them [31:09]: that is a little bit the idea that i want to express in angular
+Them [31:19]: with the idea to not a violate any convention or standard that angular already works with
+Them [31:32]: that is i'll get i get a point gustavo and i think what it's affecting here is like in angular as i mentioned all the examples that i saw
+Them [31:37]: they don't include something as a use case they just call it directly features
+Them [31:42]: so for what you consider here use cases for us is features
+Them [31:48]: i got that maybe you want maybe i don't know i'm going to like
+Them [32:00]: i'm going to let this and i'm going to do something like it's maybe in angular i don't know if i'm okay with that you can call this i don't know maybe you're going to have your features
+Them [32:03]: well i already have features features x
+Them [32:05]: well maybe here
+Them [32:08]: and let's say you're going to have
+Them [32:11]: oh no not features
+Them [32:18]: i don't know maybe would be
+Them [32:22]: what could be at this point
+Them [32:30]: they would be awake but i get the same entities let's say entities
+Them [32:33]: but it's not the right name
+Them [32:39]: but what i what i say is that something like this create
+Them [32:46]: p8 no this is not create
+Them [32:47]: sorry
+Them [32:59]: you call something like this i don't to be honest it is what i'm saying in your feature create and stuff like that right and you call every action feature
+Them [33:00]: right
+Them [33:04]: yes
+Them [33:10]: exactly that's that's what we call that or that is usually the standard okay
+Them [33:28]: i don't against that what i want to call it but the way is more like like a standard in angular for whatever but my idea is that the possibility we
+Them [33:37]: the possibility that we need to include a group of features that affect at a specific a concept
+Them [33:52]: or entity or whatever that would be because i want to give that an order the same order and organization we are getting backend that is if i want to yeah
+Them [33:55]: tell me as well
+Them [33:59]: yeah i don't know if i can share again
+Them [34:00]: sure
+Them [34:10]: i think it's okay because uh as i told you we consider that a feature because that's usually what you will see
+Them [34:13]: in all the examples
+Them [34:20]: but that's it's a convention it's not something that it's written in drug you know
+Them [34:28]: one question is it like mandatory to call to prefix all the folders with the name feature
+Them [34:54]: it's a little no no no that that's what i mean that's what we find in old example uh so that's why we were saying that for us the libraries will be acting as a feature already because of the nx infrastructure as you have it in your in your in your example for the what i understand is that is that that is libraries
+Them [34:56]: right yes
+Them [35:04]: the idea is that we can hold at this point all my all the modules right but the mode in terms of business right yes
+Rodrigo [35:08]: okay
+Them [35:08]: so we have either two options here
+Them [35:27]: uh we can direct it because this is what you will see that's that's one of the ideas of an x right you will move all the models you will not have it in the application folder but you will have it as a library
+Them [35:27]: will be a model in this case h model will act as a library
+Them [36:11]: so you will see that you have all the features all the things related here to this but in here this is what you will consider the inside we can create another folder and just call it uh use cases but here it's another thing i don't know if you also we can also do this because it's flexible right because we can create a lot of things so in here we can create even uh how do you call it country strategy management something like that the idea is for example in our recalls you can call that country strategy management exactly exactly under that idea that you can feature right folder called country strategy and then you're going to have your features
+Them [36:12]: yes
+Them [36:15]: you thought you follow
+Them [36:20]: yes so let's do it here so we have lifts
+Them [36:25]: then we will have a like the country strategy management
+Them [36:33]: call it like this
+Them [36:38]: and then sorry inside you're going to have something called country strategy
+Them [36:43]: and this is when i get a bit confused also
+Them [36:50]: yeah country spread e management is the process that holds everything related a country study
+Them [36:59]: yes and so now i get i know i get something that you're going to have a folder called for example create
+Them [37:03]: uh
+Them [37:06]: so here
+Them [37:17]: create i think you're going to have at that level you're like your view you're all the things you need to support create
+Them [37:23]: so based on the on what you mentioned before
+Them [37:26]: they will have something here
+Them [37:27]: like this
+Them [37:36]: and then well it is not mandatory that you call it use case if for angular convention you just need

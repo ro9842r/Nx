@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { AuditEntityType } from '@my-workspace/shared/interfaces';
+import { AuditEntityType } from '@oper/shared-types';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +11,5 @@ import { AuditEntityType } from '@my-workspace/shared/interfaces';
 export class Home {
   readonly countryStrategyListLink = ['/country-strategy/list'];
   readonly countryStrategyDetailLink = ['/country-strategy/detail', '64'];
-  readonly auditCountryStrategyLink = [
-    '/audit',
-    AuditEntityType.CountryStrategy,
-    '64',
-  ];
+  readonly auditEntityType = AuditEntityType.CountryStrategy;
 }

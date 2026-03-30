@@ -1,0 +1,30 @@
+{
+  "name": "ps-cen",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/portfolio-supervision/features/country-engagement-note/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["type:feature", "scope:ps"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/portfolio-supervision/features/country-engagement-note/ng-package.json",
+        "tsConfig": "libs/portfolio-supervision/features/country-engagement-note/tsconfig.lib.json"
+      },
+      "configurations": {
+        "production": {},
+        "development": {}
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/angular:unit-test",
+      "options": {}
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
