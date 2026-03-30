@@ -1,1 +1,1 @@
-// List use-case — will contain query/filter logic
+export * from './ps-engagement-note-list.component';

@@ -1,1 +1,1 @@
-// List use-case schemas and logic will be added here
+export * from './country-strategy-list.component';

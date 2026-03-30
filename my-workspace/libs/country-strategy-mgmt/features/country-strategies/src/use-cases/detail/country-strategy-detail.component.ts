@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CountryStrategyService } from '../data-access';
+import { CountryStrategyService } from '../../data-access';
 
 @Component({
   selector: 'lib-country-strategy-detail',
