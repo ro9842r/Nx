@@ -1,1 +1,1 @@
-export * from './cpd-create';
+export * from './create.schema';

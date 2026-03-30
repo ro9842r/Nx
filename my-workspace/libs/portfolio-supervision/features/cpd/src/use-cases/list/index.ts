@@ -1,1 +1,1 @@
-export * from './cpd-list';
+// List use-case — will contain query/filter logic

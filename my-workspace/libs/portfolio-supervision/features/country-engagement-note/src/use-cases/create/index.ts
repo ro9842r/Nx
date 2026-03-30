@@ -1,1 +1,1 @@
-export * from './ps-engagement-note-create';
+export * from './create.schema';

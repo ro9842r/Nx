@@ -1,1 +1,1 @@
-export * from './cpd-edit';
+export * from './edit.schema';

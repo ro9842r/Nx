@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-cpd-edit',
+  selector: 'lib-country-engagement-note-list',
   imports: [],
   template: `<section class="mx-auto w-full max-w-3xl p-4 sm:p-6">
     <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-      <h2 class="text-2xl font-semibold text-slate-900">Edit CPD</h2>
-      <p class="mt-2 text-sm text-slate-600">Placeholder for the edit use-case.</p>
+      <h2 class="text-2xl font-semibold text-slate-900">Engagement Notes</h2>
+      <p class="mt-2 text-sm text-slate-600">Placeholder — Phase 4.</p>
     </div>
   </section>`,
 })
-export class CpdEdit {}
+export class CountryEngagementNoteList {}

@@ -1,1 +1,1 @@
-export * from './ps-engagement-note-edit';
+export * from './edit.schema';
