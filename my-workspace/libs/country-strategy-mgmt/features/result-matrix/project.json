@@ -4,7 +4,7 @@
   "sourceRoot": "libs/country-strategy-mgmt/features/result-matrix/src",
   "prefix": "lib",
   "projectType": "library",
-  "tags": ["type:feature", "scope:csmgmt"],
+  "tags": ["type:feature", "scope:csmgmt", "layer:use-cases"],
   "targets": {
     "build": {
       "executor": "@nx/angular:ng-packagr-lite",

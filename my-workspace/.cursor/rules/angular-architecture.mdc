@@ -1,0 +1,24 @@
+# Angular Architecture Guardrails
+
+## Purpose
+Ensure generated code follows this repository architecture and avoids context drift.
+
+## Mandatory rules
+- Use existing project architecture before introducing new patterns.
+- For feature work, keep boundaries by layer:
+  - `use-cases` can depend on `state` and `types`.
+  - `state` can depend on `data-access` and `types`.
+  - `data-access` can depend only on `types`.
+  - `types` must not depend on other libs.
+- Prefer imports through public aliases (`@oper/*`) instead of deep relative imports across projects.
+
+## Angular patterns
+- Prefer Angular Signals for local reactive state (`signal`, `computed`, `effect` where applicable).
+- Prefer `@ngrx/signals` store pattern for feature state.
+- Prefer typed Reactive Forms (`FormBuilder`, `FormGroup`, `FormControl`).
+- Do not introduce template-driven forms (`ngModel`) in new code.
+- Do not add `FormsModule` to implement new forms unless explicitly requested.
+
+## Validation expectations
+- After changes, run lint for affected projects.
+- Preserve existing behavior and update tests when feature behavior changes.

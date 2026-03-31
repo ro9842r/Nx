@@ -4,7 +4,7 @@
   "sourceRoot": "libs/portfolio-supervision/features/cpd/src",
   "prefix": "lib",
   "projectType": "library",
-  "tags": ["type:feature", "scope:ps"],
+  "tags": ["type:feature", "scope:ps", "layer:use-cases"],
   "targets": {
     "build": {
       "executor": "@nx/angular:ng-packagr-lite",

@@ -105,6 +105,21 @@ npx nx show projects
 @oper/rm                -->  libs/country-strategy-mgmt/features/result-matrix/src/index.ts
 @oper/cpd               -->  libs/portfolio-supervision/features/cpd/src/index.ts
 @oper/ps-cen            -->  libs/portfolio-supervision/features/country-engagement-note/src/index.ts
+@oper/cs-types          -->  libs/country-strategy-mgmt/features/country-strategies/types/src/index.ts
+@oper/cs-state          -->  libs/country-strategy-mgmt/features/country-strategies/state/src/index.ts
+@oper/cs-data-access    -->  libs/country-strategy-mgmt/features/country-strategies/data-access/src/index.ts
+@oper/cs-cen-types      -->  libs/country-strategy-mgmt/features/country-engagement-note/types/src/index.ts
+@oper/cs-cen-state      -->  libs/country-strategy-mgmt/features/country-engagement-note/state/src/index.ts
+@oper/cs-cen-data-access --> libs/country-strategy-mgmt/features/country-engagement-note/data-access/src/index.ts
+@oper/rm-types          -->  libs/country-strategy-mgmt/features/result-matrix/types/src/index.ts
+@oper/rm-state          -->  libs/country-strategy-mgmt/features/result-matrix/state/src/index.ts
+@oper/rm-data-access    -->  libs/country-strategy-mgmt/features/result-matrix/data-access/src/index.ts
+@oper/cpd-types         -->  libs/portfolio-supervision/features/cpd/types/src/index.ts
+@oper/cpd-state         -->  libs/portfolio-supervision/features/cpd/state/src/index.ts
+@oper/cpd-data-access   -->  libs/portfolio-supervision/features/cpd/data-access/src/index.ts
+@oper/ps-cen-types      -->  libs/portfolio-supervision/features/country-engagement-note/types/src/index.ts
+@oper/ps-cen-state      -->  libs/portfolio-supervision/features/country-engagement-note/state/src/index.ts
+@oper/ps-cen-data-access --> libs/portfolio-supervision/features/country-engagement-note/data-access/src/index.ts
 ```
 
 ---
@@ -119,14 +134,18 @@ shell (type:app)
          +--> scope:shared only
 ```
 
-| Source Tag     | Can depend on                              |
-| -------------- | ------------------------------------------ |
-| `type:app`     | `type:feature`, `scope:shared`, `scope:csmgmt`, `scope:ps` |
-| `type:feature` | `type:feature`, `scope:shared`             |
-| `scope:csmgmt` | `scope:csmgmt`, `scope:shared`             |
-| `scope:ps`     | `scope:ps`, `scope:shared`                 |
-| `scope:shared` | `scope:shared`                             |
-| `type:types`   | nothing                                    |
+| Source Tag           | Can depend on                                             |
+| -------------------- | --------------------------------------------------------- |
+| `type:app`           | `layer:use-cases`, `scope:shared`                         |
+| `type:feature`       | `type:feature`, `scope:shared`                            |
+| `scope:csmgmt`       | `scope:csmgmt`, `scope:shared`                            |
+| `scope:ps`           | `scope:ps`, `scope:shared`                                |
+| `scope:shared`       | `scope:shared`                                            |
+| `type:types`         | nothing                                                   |
+| `layer:use-cases`    | `layer:state`, `layer:types`, `scope:shared`             |
+| `layer:state`        | `layer:data-access`, `layer:types`, `scope:shared`       |
+| `layer:data-access`  | `layer:types`, `scope:shared`                            |
+| `layer:types`        | nothing                                                   |
 
 **Forbidden paths:** `shared` cannot import scopes. `scope:ps` cannot import `scope:csmgmt`. `type:types` has zero dependencies.
 
@@ -391,22 +410,22 @@ az-swa-oper-strategy/                          # NX workspace root
 
 ---
 
-## 7. Internal Layer Convention (per scope lib)
+## 7. Internal Layer Convention (per feature)
 
-Every scope lib follows the same internal structure:
+Each feature now uses dedicated sub-libraries to enforce dependencies:
 
 ```
-<scope-lib>/
-  src/
-    types/          Models, interfaces, enums. Exported via barrel.
-    data-access/    HTTP services (API calls only). No state.
-    state/          NgRx Signal Store. Consumes data-access.
-    use-cases/      Form schemas (.schema.ts), business logic. Internal, not exported.
-    list/           Page component for list view.
-    create/         Page component for create view.
-    detail/         Page component for detail view.
-    index.ts        Public API barrel -- only exports what consumers need.
+<feature>/
+  project.json                 # layer:use-cases (public entry used by shell)
+  src/use-cases/**             # components + schemas per use-case
+  types/project.json           # layer:types
+  state/project.json           # layer:state
+  data-access/project.json     # layer:data-access
 ```
+
+Layer flow:
+
+`use-cases -> state -> data-access -> types`
 
 ---
 

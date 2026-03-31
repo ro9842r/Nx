@@ -8,18 +8,27 @@
     "importHelpers": true,
     "target": "es2022",
     "module": "esnext",
-    "lib": ["es2022", "dom"],
+    "lib": [
+      "es2022",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
-      "@oper/shared-types": ["libs/_shared/types/src/index.ts"],
-      "@oper/shared-utils": ["libs/_shared/utils/src/index.ts"],
-      "@oper/shared-constants": ["libs/_shared/constants/src/index.ts"],
-
-      "@oper/cs-members": ["libs/country-strategy-mgmt/members/src/index.ts"],
-
+      "@oper/shared-types": [
+        "libs/_shared/types/src/index.ts"
+      ],
+      "@oper/shared-utils": [
+        "libs/_shared/utils/src/index.ts"
+      ],
+      "@oper/shared-constants": [
+        "libs/_shared/constants/src/index.ts"
+      ],
+      "@oper/cs-members": [
+        "libs/country-strategy-mgmt/members/src/index.ts"
+      ],
       "@oper/cs": [
         "libs/country-strategy-mgmt/features/country-strategies/src/index.ts"
       ],
@@ -29,14 +38,61 @@
       "@oper/rm": [
         "libs/country-strategy-mgmt/features/result-matrix/src/index.ts"
       ],
-
       "@oper/cpd": [
         "libs/portfolio-supervision/features/cpd/src/index.ts"
       ],
       "@oper/ps-cen": [
         "libs/portfolio-supervision/features/country-engagement-note/src/index.ts"
+      ],
+      "@oper/cs-types": [
+        "libs/country-strategy-mgmt/features/country-strategies/types/src/index.ts"
+      ],
+      "@oper/cs-state": [
+        "libs/country-strategy-mgmt/features/country-strategies/state/src/index.ts"
+      ],
+      "@oper/cs-data-access": [
+        "libs/country-strategy-mgmt/features/country-strategies/data-access/src/index.ts"
+      ],
+      "@oper/cs-cen-types": [
+        "libs/country-strategy-mgmt/features/country-engagement-note/types/src/index.ts"
+      ],
+      "@oper/cs-cen-state": [
+        "libs/country-strategy-mgmt/features/country-engagement-note/state/src/index.ts"
+      ],
+      "@oper/cs-cen-data-access": [
+        "libs/country-strategy-mgmt/features/country-engagement-note/data-access/src/index.ts"
+      ],
+      "@oper/rm-types": [
+        "libs/country-strategy-mgmt/features/result-matrix/types/src/index.ts"
+      ],
+      "@oper/rm-state": [
+        "libs/country-strategy-mgmt/features/result-matrix/state/src/index.ts"
+      ],
+      "@oper/rm-data-access": [
+        "libs/country-strategy-mgmt/features/result-matrix/data-access/src/index.ts"
+      ],
+      "@oper/ps-cen-types": [
+        "libs/portfolio-supervision/features/country-engagement-note/types/src/index.ts"
+      ],
+      "@oper/ps-cen-state": [
+        "libs/portfolio-supervision/features/country-engagement-note/state/src/index.ts"
+      ],
+      "@oper/ps-cen-data-access": [
+        "libs/portfolio-supervision/features/country-engagement-note/data-access/src/index.ts"
+      ],
+      "@oper/cpd-types": [
+        "libs/portfolio-supervision/features/cpd/types/src/index.ts"
+      ],
+      "@oper/cpd-state": [
+        "libs/portfolio-supervision/features/cpd/state/src/index.ts"
+      ],
+      "@oper/cpd-data-access": [
+        "libs/portfolio-supervision/features/cpd/data-access/src/index.ts"
       ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

@@ -19,12 +19,7 @@ export default [
           depConstraints: [
             {
               sourceTag: 'type:app',
-              onlyDependOnLibsWithTags: [
-                'type:feature',
-                'scope:shared',
-                'scope:csmgmt',
-                'scope:ps',
-              ],
+              onlyDependOnLibsWithTags: ['layer:use-cases', 'scope:shared'],
             },
             {
               sourceTag: 'type:feature',
@@ -47,6 +42,22 @@ export default [
             },
             {
               sourceTag: 'type:types',
+              onlyDependOnLibsWithTags: [],
+            },
+            {
+              sourceTag: 'layer:use-cases',
+              onlyDependOnLibsWithTags: ['layer:state', 'layer:types', 'scope:shared'],
+            },
+            {
+              sourceTag: 'layer:state',
+              onlyDependOnLibsWithTags: ['layer:data-access', 'layer:types', 'scope:shared'],
+            },
+            {
+              sourceTag: 'layer:data-access',
+              onlyDependOnLibsWithTags: ['layer:types', 'scope:shared'],
+            },
+            {
+              sourceTag: 'layer:types',
               onlyDependOnLibsWithTags: [],
             },
           ],
