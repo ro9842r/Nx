@@ -31,4 +31,34 @@ export const appRoutes: Route[] = [
       },
     ],
   },
+  {
+    path: 'result-matrix',
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'list',
+      },
+      {
+        path: 'list',
+        loadComponent: () =>
+          import('@oper/rm').then((m) => m.ResultMatrixList),
+      },
+      {
+        path: 'detail/:id',
+        loadComponent: () =>
+          import('@oper/rm').then((m) => m.ResultMatrixDetail),
+      },
+      {
+        path: 'create',
+        loadComponent: () =>
+          import('@oper/rm').then((m) => m.ResultMatrixCreate),
+      },
+      {
+        path: 'edit/:id',
+        loadComponent: () =>
+          import('@oper/rm').then((m) => m.ResultMatrixEdit),
+      },
+    ],
+  },
 ];
